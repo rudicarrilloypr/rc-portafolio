@@ -4,19 +4,25 @@
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #333;
     color: white;
     padding: 1rem;
     z-index: 1000;
   }
+
+  .logo {
+    height: 50px; /* Ajusta esto según tus necesidades */
+    margin-right: 20px; /* Espacio entre el logo y los enlaces de navegación */
+  }
   
   .navItems {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    /*width: 100%;*/
+    flex-grow: 0.9;
   }
   
   .menuIcon {
@@ -38,13 +44,20 @@
     .navbar {
       justify-content: flex-start;
     }
+
+    .logo {
+      position: absolute;
+      left: 46%;
+      transform: translateX(-50%);
+      top: 10px;
+    }
   
     .navItems {
       display: none;
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: 0;
+      left: -4%;
       background-color: #333;
       width: 100%;
     }

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/RC-SD-logo(white).PNG';
 import styles from './navbar.module.css';
 
 function Navbar() {
@@ -10,6 +11,7 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+      <img src={logo} alt="Logo" className={styles.logo} />
       <div className={styles.menuIcon} onClick={() => setIsOpen(!isOpen)}>
         <FontAwesomeIcon icon={faBars} />
       </div>
