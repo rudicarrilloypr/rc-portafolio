@@ -2,6 +2,16 @@
 .portfolio {
     padding: 4rem 1rem;
     background-color: #f1f1f1;
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
   }
   
   .socialLinks {
@@ -22,3 +32,14 @@
     color: rgb(181, 188, 183);
   }
   
+
+@media (max-width: 768px) {
+    .profileImage {
+      width: 80px; /* Tamaño más pequeño para dispositivos móviles */
+      height: 80px;
+    }
+
+    .portfolio {
+      margin-top: 60px; /* Ajusta para móviles si es necesario */
+    }
+    }

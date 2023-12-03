@@ -1,11 +1,13 @@
 // Portfolio.jsx
 import React from 'react';
 import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import profileImage from '../../assets/rc-white.PNG';
 import styles from './portfolio.module.css';
 
 function Portfolio() {
   return (
     <section id="portfolio" className={styles.portfolio}>
+     <img src={profileImage} alt="Rudi Carrillo" className={styles.profileImage}/>
       <h1>Rudi Carrillo</h1>
       <p>My enthusiasm as a software developer lies in creating streamlined solutions for both front and back-end projects.</p>
       <div className={styles.socialLinks}>
