@@ -1,13 +1,27 @@
 // Portfolio.jsx
 import React from 'react';
+import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import styles from './portfolio.module.css';
 
 function Portfolio() {
   return (
     <section id="portfolio" className={styles.portfolio}>
       <h1>Rudi Carrillo</h1>
-      <p>As a software developer, my passion is crafting seamless solutions, embracing both front and back-end challenges with a unique blend of creativity, technical expertise, and entrepreneurial spirit. My approach mirrors the dynamism of combining an aesthetic eye, problem-solving skills, and strategic drive. This fusion enables me to deliver innovative and efficient software solutions, making me a versatile and valuable asset to any team aiming to transform ideas into reality..</p>
-      {/* Insert portfolio items here */}
+      <p>My enthusiasm as a software developer lies in creating streamlined solutions for both front and back-end projects.</p>
+      <div className={styles.socialLinks}>
+        <a href="https://www.linkedin.com/in/rudi-carrillo/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className={styles.icon} />
+        </a>
+        <a href="https://github.com/rudicarrilloypr" target="_blank" rel="noopener noreferrer">
+          <FaGithub className={styles.icon} />
+        </a>
+        <a href="https://twitter.com/__rudicarrillo" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className={styles.icon} />
+        </a>
+        <a href="https://www.instagram.com/_rudicarrillo/" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className={styles.icon} />
+        </a>
+      </div>
     </section>
   );
 }
