@@ -10,6 +10,7 @@
     color: white;
     padding: 1rem;
     z-index: 1000;
+    box-sizing: border-box;
   }
 
   .logo {
@@ -43,13 +44,16 @@
   @media (max-width: 768px) {
     .navbar {
       justify-content: flex-start;
+      box-sizing: border-box;
     }
 
     .logo {
       position: absolute;
-      left: 46%;
+      left: 50%;
       transform: translateX(-50%);
-      top: 10px;
+      top: 12px;
+      width: auto;
+      height: 45px;
     }
   
     .navItems {
@@ -57,7 +61,7 @@
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: -4%;
+      left: 0;
       background-color: #333;
       width: 100%;
     }

@@ -4,6 +4,7 @@
     background-color: #f1f1f1;
     text-align: center;
     margin-top: 70px;
+    box-sizing: border-box;
   }
 
   .profileImage {
@@ -12,6 +13,12 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 5px;
+  }
+
+  .portfolio h2 {
+   font-size: 20px;
+   margin-bottom: 2px;
+  
   }
   
   .socialLinks {
@@ -42,4 +49,9 @@
     .portfolio {
       margin-top: 60px; /* Ajusta para móviles si es necesario */
     }
+    .portfolio h2 {
+      font-size: 18px;
+      margin-top: -9px;
+    }
+
     }

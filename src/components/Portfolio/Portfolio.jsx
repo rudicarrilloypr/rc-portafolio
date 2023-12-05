@@ -9,6 +9,7 @@ function Portfolio() {
     <section id="portfolio" className={styles.portfolio}>
      <img src={profileImage} alt="Rudi Carrillo" className={styles.profileImage}/>
       <h1>Rudi Carrillo</h1>
+      <h2>Certified Software Developer</h2>
       <p>My enthusiasm as a software developer lies in creating streamlined solutions for front and back-end projects.</p>
       <div className={styles.socialLinks}>
         <a href="https://www.linkedin.com/in/rudi-carrillo/" target="_blank" rel="noopener noreferrer">
