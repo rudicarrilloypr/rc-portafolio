@@ -9,12 +9,45 @@
 .slide {
   padding: 15px;
   text-align: center;
-  background: #f1f1f1;
+  /*background: #f1f1f1;*/
   border-radius: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 20%; /* Reducir el ancho del recuadro */
-  height: 200px;
-  margin: 0 10px; /* Centrar horizontalmente en su espacio */
+  width: 100%; /* Reducir el ancho del recuadro */
+  height: 600px;
+  margin: 0 0; /* Centrar horizontalmente en su espacio */
+  background-size: cover; /* Asegúrate de que la imagen cubra todo el recuadro */
+  position: relative; /* Para la capa superpuesta */
+  background-color: transparent; /* En lugar de background: #f1f1f1; */
+  background-position: center; /* Asegurar que la imagen esté centrada */
+  background-repeat: no-repeat; 
+}
+
+.fortnite {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.08.38_s2n0ez.png');
+}
+
+.airPurity {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.09.34_twiex8.png');
+}
+
+.actionsApp {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701847152/IMG_7669_ri8ojb.png');
+}
+
+.mathMagicians {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.12.58_edfcyy.png');
+}
+
+.toDoList {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846970/Captura_de_pantalla_2023-12-06_a_la_s_1.13.50_yd2wmq.png');
+}
+
+.worldTour {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846970/Captura_de_pantalla_2023-12-06_a_la_s_1.14.47_usoykg.png');
+}
+
+.bookAConcert {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.15.24_ufmzn5.png');
 }
 
 /* Estilos de las flechas */
@@ -35,6 +68,56 @@
   top: 50%; /* Alineación vertical en el centro */
   transform: translateY(-50%); /* Centrar verticalmente */
   box-sizing: border-box;
+}
+
+.infoButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.infoButton:hover {
+  background-color: #f0f0f0;
+}
+
+.slideContent {
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+  width: 500px; /* Ancho fijo */
+  height: 300px; /* Altura fija */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
+  border-radius: 15px; /* Opcional: bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+}
+
+
+.slideOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .slickPrev {
@@ -60,13 +143,50 @@
 }
 
 .slide h3 {
-  margin-bottom: 10px;
+  font-size: 24px; /* Aumentar el tamaño de la fuente */
+  font-weight: bold; /* Hacer el texto más grueso */
+  color: #333; /* Color oscuro para mayor contraste */
+  margin-bottom: 20px; /* Aumentar el espaciado */
 }
 
 .slide p {
-  margin-bottom: 15px;
+  font-size: 16px; /* Aumentar el tamaño de la fuente */
+  color: #666; /* Color más suave */
+  margin-bottom: 20px; /* Aumentar el espaciado */
 }
 
+.slide a {
+  font-weight: bold; /* Hacer el texto de los enlaces más grueso */
+  color: #1a73e8; /* Color de enlace más vibrante */
+}
+
+.slide a:hover {
+  color: #4a90e2; /* Color de enlace al pasar el mouse */
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 50%; /* Forma circular */
+  font-size: 20px;
+  color: #333; /* Color oscuro para el texto */
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  width: 30px; /* Tamaño fijo */
+  height: 30px; /* Tamaño fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0; /* Cambio de color al pasar el mouse */
+  border-color: #bbb; /* Cambio de color del borde al pasar el mouse */
+}
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
@@ -81,8 +201,10 @@
   }
   .slide {
     width: 90%; /* Ancho más grande en dispositivos móviles */
-    height: auto; /* Altura automática en dispositivos móviles */
+    height: 300px; /* Altura automática en dispositivos móviles */
     padding: 0%;
+    background-size: cover; /* Asegúrate de que la imagen cubra todo el recuadro */
+    position: relative; /* Para la capa superpuesta */
   }
   
   .slick-slide.slick-center .slide {
@@ -95,6 +217,27 @@
   
   .slide p {
     margin-bottom: 15px;
+  }
+
+  .slideContent {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+    width: 400px; /* Ancho fijo */
+    height: 300px; /* Altura fija */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
+    border-radius: 15px; /* Opcional: bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+  }
+  .closeButton {
+    display: block; /* Visible solo en móviles */
   }
 }
 
