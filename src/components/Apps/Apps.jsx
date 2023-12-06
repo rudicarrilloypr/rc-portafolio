@@ -15,6 +15,14 @@ const projects = [
     className: "fortnite"
   },
   {
+    name: "Book a Concert",
+    url: "https://github.com/Diegogagan2587/Book-a-concert-front-end",
+    demo: "https://book-a-concert.onrender.com/",
+    description: "Prototype website where the goal is to help independent artists create their concerts or live events and people can reserve concert tickets with their own user; This project was created to test the learned skills for the final full-stack capstone project of the Microverse program.",
+    builtWith: ["React", "Redux", "JavaScript", "HTML", "CSS", "Bootstrap", "Node.js", "Ruby on Rails", "PostgreSQL", "RSpec"],
+    className: "bookAConcert"
+  },
+  {
     name: "Air Purity: MÉXICO",
     url: "https://github.com/rudicarrilloypr/my-air-quality-app",
     demo: "https://airpurity-mx.netlify.app/",
@@ -53,14 +61,6 @@ const projects = [
     description: "Capstone project to test the learned skills into a conference page, module based on HTML, CSS and basic JavaScript. This project is part of the Microverse curriculum. The project contains a full description of an R&B Music World Tour.",
     builtWith: ["HTML", "CSS", "JavaScript"],
     className: "worldTour"
-  },
-  {
-    name: "Book a Concert",
-    url: "https://github.com/Diegogagan2587/Book-a-concert-front-end",
-    demo: "https://book-a-concert.onrender.com/",
-    description: "Prototype website where the user can reserve concert tickets and also create their own concert or live event; This project was created to test the learned skills for the final full-stack capstone project of the Microverse program.",
-    builtWith: ["React", "Redux", "JavaScript", "HTML", "CSS", "Bootstrap", "Node.js", "Ruby on Rails", "PostgreSQL", "RSpec"],
-    className: "bookAConcert"
   }
 ];
 
