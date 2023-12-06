@@ -1,9 +1,19 @@
 /* apps.module.css */
 .apps {
-  padding: 4rem 1rem;
+  padding: 1.5rem 0.2rem;
   background-color: #fff;
   width: 100%;
   box-sizing: border-box;
+}
+
+.apps h1 {
+  font-size: 2.5rem; /* Tamaño grande pero elegante */
+  font-weight: 300; /* Fuente ligera */
+  color: #333; /* Color oscuro para contraste */
+  text-align: center; /* Alineación centrada */
+  margin-top: 0; /* Reducir el margen superior */
+  margin-bottom: 1rem; /* Espaciado debajo del título */
+  letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
 }
 
 .slide {
@@ -196,6 +206,11 @@
     width: 100%;
     box-sizing: border-box;
   }
+  
+  .apps h1 {
+    font-size: 2rem; /* Tamaño más pequeño para dispositivos móviles */
+  }
+
   .slickNext, .slickPrev {
     display: none; /* Ocultar flechas para dispositivos móviles */
   }

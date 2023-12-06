@@ -26,7 +26,7 @@ const projects = [
     name: "Actions App",
     url: "https://github.com/rudicarrilloypr/actions-app",
     demo: "https://actions-app.onrender.com/",
-    description: "Mobile web application where you can manage your budget; you can create a list of transactions associated with a category, so that you can see how much money you spent and on what.",
+    description: "Mobile web application where you can manage your budget; you can create a list of transactions associated with a category, so you can see how much money you spent and on what.",
     builtWith: "ROR, Javascript, CSS, Bootstrap, Node.js.",
     className: "actionsApp"
   },
@@ -120,7 +120,7 @@ function Apps() {
 
   return (
     <section id="apps" className={styles.apps}>
-      <h1>Apps</h1>
+      <h1>Web Applications</h1>
       <Slider {...settings}>
       {projects.map((project, index) => (
   <div key={index} className={`${styles.slide} ${styles[project.className]}`}>
