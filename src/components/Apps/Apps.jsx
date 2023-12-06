@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
   {
-    name: "Fortnite new Cosmetics",
+    name: "Fortnite New Cosmetics",
     url: "https://github.com/rudicarrilloypr/fortnite-api",
     demo: "https://fortnite-api-new.netlify.app/",
     description: "Web application that receives updated data from the official Fortnite API and shows the upcoming cosmetics into the game.",
@@ -26,7 +26,7 @@ const projects = [
     name: "Actions App",
     url: "https://github.com/rudicarrilloypr/actions-app",
     demo: "https://actions-app.onrender.com/",
-    description: "Mobile web application where you can manage your budget; you have a list of transactions associated with a category, so that you can see how much money you spent and on what.",
+    description: "Mobile web application where you can manage your budget; you can create a list of transactions associated with a category, so that you can see how much money you spent and on what.",
     builtWith: "ROR, Javascript, CSS, Bootstrap, Node.js.",
     className: "actionsApp"
   },

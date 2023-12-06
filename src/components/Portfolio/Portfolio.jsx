@@ -1,14 +1,15 @@
 // Portfolio.jsx
 import React from 'react';
 import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { MdVerified } from "react-icons/md";
 import profileImage from '../../assets/rc-white.PNG';
 import styles from './portfolio.module.css';
 
 function Portfolio() {
   return (
     <section id="portfolio" className={styles.portfolio}>
-     <img src={profileImage} alt="Rudi Carrillo" className={styles.profileImage}/>
-      <h1>Rudi Carrillo</h1>
+      <img src={profileImage} alt="Rudi Carrillo" className={styles.profileImage}/>
+      <h1>Rudi Carrillo <MdVerified className={styles.verifiedIcon} /></h1> 
       <h2>Certified Software Developer</h2>
       <p>My enthusiasm as a software developer lies in creating streamlined solutions for front and back-end projects.</p>
       <div className={styles.socialLinks}>

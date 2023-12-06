@@ -15,6 +15,10 @@
     margin-bottom: 5px;
   }
 
+  .portfolio h1 {
+    margin-left: 12px;
+  }
+
   .portfolio h2 {
    font-size: 20px;
    margin-bottom: 2px;
@@ -39,6 +43,13 @@
     color: rgb(181, 188, 183);
   }
   
+  .verifiedIcon {
+    color: #1DA1F2; /* Color azul similar al de Twitter para el icono de verificación */
+    margin-left: -2px; /* Espacio entre el nombre y el icono */
+    margin-bottom: 17px;
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+    font-size: 0.9rem; /* Tamaño del icono */
+  }
 
 @media (max-width: 768px) {
     .profileImage {
@@ -49,6 +60,10 @@
     .portfolio {
       margin-top: 60px; /* Ajusta para móviles si es necesario */
     }
+    .portfolio h1 {
+      margin-left: 12px;
+    }
+
     .portfolio h2 {
       font-size: 18px;
       margin-top: -9px;

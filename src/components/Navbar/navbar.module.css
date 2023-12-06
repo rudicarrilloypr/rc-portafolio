@@ -34,7 +34,8 @@
     cursor: pointer;
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 0.25rem; /* Reducir el padding lateral */
+    margin: 0 0.1rem;
   }
   
   .navbar a:hover, .navbar a.active {
