@@ -201,7 +201,7 @@
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .apps {
-    padding: 4rem 0.2rem;
+    padding: 2rem 0.2rem;
     background-color: #fff;
     width: 100%;
     box-sizing: border-box;
