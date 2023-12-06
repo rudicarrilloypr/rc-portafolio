@@ -115,13 +115,12 @@
   top: 50%; /* Centrar verticalmente */
   left: 50%; /* Centrar horizontalmente */
   transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
-  width: 500px; /* Ancho fijo */
   height: 300px; /* Altura fija */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 15px 10px;
   box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
   border-radius: 15px; /* Opcional: bordes redondeados */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
@@ -177,6 +176,32 @@
   color: #4a90e2; /* Color de enlace al pasar el mouse */
 }
 
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos */
+  margin-top: 10px; /* Espacio adicional arriba, si es necesario */
+  margin-left: -30px; /* Espacio adicional a la izquierda, si es necesario */
+}
+
+/* Estilos para los enlaces */
+.linksContainer a {
+  text-decoration: none;
+  color: #1a73e8; /* Color de enlace */
+  font-weight: bold; /* Negrita para destacar */
+}
+
+.linksContainer a:hover {
+  color: #4a90e2; /* Color al pasar el mouse */
+}
+
+/* Estilos para el separador */
+.linksContainer span {
+  color: #666; /* Color del separador */
+}
+
+
 .closeButton {
   position: absolute;
   top: 10px;
@@ -199,6 +224,19 @@
 .closeButton:hover {
   background-color: #f0f0f0; /* Cambio de color al pasar el mouse */
   border-color: #bbb; /* Cambio de color del borde al pasar el mouse */
+}
+
+.techBadge {
+  display: inline-block;
+  background-color: #f1f1f1; /* Fondo claro */
+  color: #333; /* Texto oscuro */
+  padding: 5px 10px; /* Espaciado interno */
+  margin: 2px; /* Espaciado externo */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 0.8rem; /* Tamaño de fuente pequeño */
+  font-weight: 500; /* Semi-negrita */
+  text-align: center;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 /* Estilos para móviles */
@@ -256,6 +294,10 @@
   }
   .closeButton {
     display: block; /* Visible solo en móviles */
+  }
+  .techBadge {
+    font-size: 0.7rem; /* Tamaño de fuente más pequeño para móviles */
+    padding: 3px 7px; /* Menor espaciado interno para móviles */
   }
 }
 

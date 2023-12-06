@@ -11,7 +11,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/fortnite-api",
     demo: "https://fortnite-api-new.netlify.app/",
     description: "Web application that receives updated data from the official Fortnite API and shows the upcoming cosmetics into the game.",
-    builtWith: "JavaScript, Webpack, HTML, CSS, Node.js, Fortnite API.",
+    builtWith: ["JavaScript", "Webpack", "HTML", "CSS", "Node.js", "Fortnite API"],
     className: "fortnite"
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/my-air-quality-app",
     demo: "https://airpurity-mx.netlify.app/",
     description: "Mobile web application to check and provide Mexico's current air pollution quality and beautiful pictures of iconic Mexico places, coming from OpenWeather and Unsplash API.",
-    builtWith: "React, Webpack, JavaScript, HTML, CSS, Node.js, Unsplash API, OpenWeather API.",
+    builtWith: ["React", "Webpack", "JavaScript", "HTML", "CSS", "Node.js", "Unsplash API", "OpenWeather API"],
     className: "airPurity"
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/actions-app",
     demo: "https://actions-app.onrender.com/",
     description: "Mobile web application where you can manage your budget; you can create a list of transactions associated with a category, so you can see how much money you spent and on what.",
-    builtWith: "ROR, Javascript, CSS, Bootstrap, Node.js.",
+    builtWith: ["Ruby on Rails", "PostgreSQL", "Javascript", "CSS", "Bootstrap", "Node.js", "RSpec"],
     className: "actionsApp"
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/math-magicians",
     demo: "https://magos-matematicos.netlify.app/",
     description: "Website for all fans of mathematics. It is a Single Page App (SPA) that allows users to: Make simple calculations and get motivational quotes.",
-    builtWith: "React, JavaScript, Webpack, HTML, CSS, Node.js.",
+    builtWith: ["React", "JavaScript", "Webpack", "HTML", "CSS", "Node.js"],
     className: "mathMagicians"
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/todo-list",
     demo: "https://rudicarrilloypr.github.io/todo-list/dist/",
     description: "A basic To-Do List app. SPA that allows you to add, edit, and delete tasks. It also allows you to mark tasks as done.",
-    builtWith: "Webpack, JavaScript, HTML, CSS.",
+    builtWith: ["Webpack", "JavaScript", "HTML", "CSS", "Node.js"],
     className: "toDoList"
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/capstone-module-1",
     demo: "https://rudicarrilloypr.github.io/capstone-module-1/main.html",
     description: "Capstone project to test the learned skills into a conference page, module based on HTML, CSS and basic JavaScript. This project is part of the Microverse curriculum. The project contains a full description of an R&B Music World Tour.",
-    builtWith: "HTML, CSS, JavaScript.",
+    builtWith: ["HTML", "CSS", "JavaScript"],
     className: "worldTour"
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     url: "https://github.com/Diegogagan2587/Book-a-concert-front-end",
     demo: "https://book-a-concert.onrender.com/",
     description: "Prototype website where the user can reserve concert tickets and also create their own concert or live event; This project was created to test the learned skills for the final full-stack capstone project of the Microverse program.",
-    builtWith: "Front-end: React, Redux, JavaScript, HTML, CSS, Bootstrap, Node.js. Back-end: Ruby on Rails, PostgreSQL, RSpec.",
+    builtWith: ["React", "Redux", "JavaScript", "HTML", "CSS", "Bootstrap", "Node.js", "Ruby on Rails", "PostgreSQL", "RSpec"],
     className: "bookAConcert"
   }
 ];
@@ -131,10 +131,14 @@ function Apps() {
     <button className={styles.closeButton} onClick={() => toggleInfo(index)}>X</button>
           <h3>{project.name}</h3>
           <p>{project.description}</p>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span> - </span>
-          <a href={project.demo} target="_blank" rel="noopener noreferrer">Live</a>
-          <p>Built With: {project.builtWith}</p>
+          <div className={styles.linksContainer}>
+  <a href={project.url} target="_blank" rel="noopener noreferrer">Source Code</a>
+  <span> | </span>
+  <a href={project.demo} target="_blank" rel="noopener noreferrer">Live</a>
+</div>
+          <p>Built With: {project.builtWith.map((tech, idx) => (
+  <span key={idx} className={styles.techBadge}>{tech}</span>
+))}</p>
         </div>
       )}
     </div>
