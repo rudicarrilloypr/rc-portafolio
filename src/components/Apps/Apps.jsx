@@ -43,7 +43,7 @@ const projects = [
     url: "https://github.com/rudicarrilloypr/math-magicians",
     demo: "https://magos-matematicos.netlify.app/",
     description: "Website for all fans of mathematics. It is a Single Page App (SPA) that allows users to: Make simple calculations and get motivational quotes.",
-    builtWith: ["React", "JavaScript", "Webpack", "HTML", "CSS", "Node.js"],
+    builtWith: ["React", "JavaScript", "Webpack", "HTML", "CSS", "Node.js", "Ninjas API"],
     className: "mathMagicians"
   },
   {
