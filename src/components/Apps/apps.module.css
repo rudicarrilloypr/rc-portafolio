@@ -61,6 +61,16 @@
 }
 
 /* Estilos de las flechas */
+.slickPrev {
+  left: -19px; /* Alinear a la izquierda */
+  margin-left: 30px;
+}
+
+.slickNext {
+  right: 29px; /* Alinear a la derecha */
+  margin-right: 30px;
+}
+
 .slickNext, .slickPrev {
   background-color: #a0a0a0;
   border-radius: 50%;
@@ -74,7 +84,7 @@
   color: black;
   opacity: 0.7;
   transition: opacity 0.3s;
-  position: absolute; /* Mantener la posición absoluta */
+  /*position: absolute; Mantener la posición absoluta */
   top: 50%; /* Alineación vertical en el centro */
   transform: translateY(-50%); /* Centrar verticalmente */
   box-sizing: border-box;
@@ -130,13 +140,6 @@
   justify-content: center;
 }
 
-.slickPrev {
-  left: -19px; /* Alinear a la izquierda */
-}
-
-.slickNext {
-  right: -19px; /* Alinear a la derecha */
-}
 .slick-center .slide {
   transform: scale(1.05); /* Escalar ligeramente el slide actual */
   z-index: 5000; /* Asegurarse de que esté encima de los demás slides */
