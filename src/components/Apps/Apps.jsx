@@ -120,11 +120,11 @@ function Apps() {
 
   return (
     <section id="apps" className={styles.apps}>
-      <h1>Web Applications</h1>
+      <h1>Featured Web Apps</h1>
       <Slider {...settings}>
       {projects.map((project, index) => (
   <div key={index} className={`${styles.slide} ${styles[project.className]}`}>
-    <div className={styles.slideOverlay}> {/* Envoltorio agregado */}
+    <div className={styles.slideOverlay}>
       <button className={styles.infoButton} onClick={() => toggleInfo(index)}>More Info</button>
       {infoVisible[index] && (
   <div className={styles.slideContent}>

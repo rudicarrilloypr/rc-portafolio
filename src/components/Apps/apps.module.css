@@ -242,14 +242,14 @@
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .apps {
-    padding: 2rem 0.2rem;
+    padding: 1rem 0.2rem;
     background-color: #fff;
     width: 100%;
     box-sizing: border-box;
   }
   
   .apps h1 {
-    font-size: 2rem; /* Tamaño más pequeño para dispositivos móviles */
+    font-size: 1.7rem; /* Tamaño más pequeño para dispositivos móviles */
   }
 
   .slickNext, .slickPrev {
