@@ -197,3 +197,55 @@
   margin-top: 10px;
 }
 }
+
+/* Estilos para Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    text-align: left;
+  }
+
+  .quoteSection {
+    grid-column: 2;
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .profileImageWrapper {
+    grid-column: 1;
+    grid-row: 1;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .certificates {
+    display: inline-flex;
+    flex: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+  }
+
+  .certificatesLinks a {
+    display: inline-flex;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    margin: 10px 0; /* Espaciado entre enlaces */
+  }
+
+  .certificationIcon {
+    left: 5%;
+    transform: translateX(-50%);
+    top: -30px;
+  }
+  
+}
