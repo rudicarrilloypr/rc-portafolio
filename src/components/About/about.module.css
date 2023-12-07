@@ -17,12 +17,14 @@
   font-family: 'Merriweather', serif;
   font-size: 1.5rem;
   max-width: 800px; 
+  text-align: right;
   background-color: #fff; /* White background for the quote section */
-  padding: 2rem;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin: 0; /* Adjust margin as needed */
   border-left: 5px solid #4a90e2;
+  padding: 2rem;
 }
 
 .profileImageWrapper {
@@ -33,7 +35,7 @@
   max-height: 600px; /* Max height to maintain aspect ratio */
   margin: 0 auto; /* Center the image in its grid column */
   overflow: hidden;
-  margin-left: 10px;
+  margin-left: -120px;
 }
 
 .profileImage {
