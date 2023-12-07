@@ -181,7 +181,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px; /* Espacio entre los elementos */
-  margin-top: 10px; /* Espacio adicional arriba, si es necesario */
+  margin-top: 1px; /* Espacio adicional arriba, si es necesario */
   margin-left: -30px; /* Espacio adicional a la izquierda, si es necesario */
 }
 
