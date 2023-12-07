@@ -14,7 +14,7 @@
 }
 
 .quoteSection {
-  font-family: 'Merriweather', serif; /* This is just an example, choose any font you like */
+  font-family: 'Merriweather', serif;
   font-size: 1.5rem;
   max-width: 800px; 
   background-color: #fff; /* White background for the quote section */
@@ -33,6 +33,7 @@
   max-height: 600px; /* Max height to maintain aspect ratio */
   margin: 0 auto; /* Center the image in its grid column */
   overflow: hidden;
+  margin-left: 10px;
 }
 
 .profileImage {
