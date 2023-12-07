@@ -1,6 +1,65 @@
-/* socials.module.css */
 .socials {
-    padding: 4rem 1rem;
-    background-color: #f1f1f1;
-  }
-  
+  padding: 4rem 1rem;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif; /* Estilo de fuente similar a Apple */
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.blogPreview {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.blogTitle {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.blogAuthor {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.blogImage {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Añade un ligero sombreado para resaltar la imagen */
+  transition: transform 0.3s ease;
+}
+
+.blogImage:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
+}
+
+.footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  border-top: 1px solid #e1e1e1; /* Una línea sutil en la parte superior */
+}
+
+.footerLogo {
+  max-width: 50px;
+  height: auto;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombreado para dar profundidad */
+  border-radius: 5px; /* Bordes redondeados ligeramente */
+  transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.footerLogo:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
+}

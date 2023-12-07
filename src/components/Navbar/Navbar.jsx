@@ -29,7 +29,7 @@ function Navbar() {
           Contact
         </Link>
         <Link activeClass={styles.active} to="socials" spy={true} smooth={true} offset={-70} duration={500}>
-          Socials
+          More
         </Link>
       </div>
     </nav>

@@ -1,3 +1,10 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+html, body {
+  max-width: 100%;
+}
+
 .App {
   text-align: center;
 }
