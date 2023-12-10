@@ -1,6 +1,7 @@
 // Apps.jsx
 import React, { useState } from 'react';
 import Slider from 'react-slick';
+import { FaPlay, FaPause } from 'react-icons/fa';
 import styles from './apps.module.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -88,6 +89,8 @@ function Apps() {
   // Estado para manejar la visibilidad de la información
   const [infoVisible, setInfoVisible] = useState(Array(projects.length).fill(false));
 
+  const [isPlaying, setIsPlaying] = useState(true);
+
   // Función para manejar el clic en el botón More Info
   const toggleInfo = (index) => {
     const newInfoVisible = [...infoVisible];
@@ -99,6 +102,8 @@ function Apps() {
     dots: true,
     infinite: true,
     speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
@@ -118,10 +123,14 @@ function Apps() {
     ]
   };
 
+  const togglePlay = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <section id="apps" className={styles.apps}>
       <h1>Featured Web Apps</h1>
-      <Slider {...settings}>
+      <Slider {...settings} autoplay={isPlaying}>
       {projects.map((project, index) => (
   <div key={index} className={`${styles.slide} ${styles[project.className]}`}>
     <div className={styles.slideOverlay}>
@@ -145,6 +154,9 @@ function Apps() {
   </div>
 ))}
       </Slider>
+      <div className={styles.playPauseIcon} onClick={togglePlay}>
+        {isPlaying ? <FaPause /> : <FaPlay />}
+      </div>
     </section>
   );
 }

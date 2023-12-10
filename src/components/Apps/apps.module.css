@@ -239,6 +239,17 @@
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
+.playPauseIcon {
+  position: absolute;
+  top: 700px;
+  right: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 24px; /* Ajusta el tamaño según tus necesidades */
+  color: white; /* O el color que prefieras */
+}
+
+
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .apps {
@@ -299,6 +310,10 @@
     font-size: 0.7rem; /* Tamaño de fuente más pequeño para móviles */
     padding: 3px 7px; /* Menor espaciado interno para móviles */
   }
+
+  .playPauseIcon {
+    top: 580px;
+    right: 20px;
+    font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+  }
 }
-
-
