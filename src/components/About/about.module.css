@@ -47,11 +47,20 @@
 
 .certificates {
   grid-column: 1 / -1; /* Stretch across all columns */
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content:flex-end; /* Center the certificates */
   gap: 2rem; /* Space between certificates */
-  margin-top: 3.5rem; /* Space between quote section and certificates */
+  margin-top: -5rem; /* Space between quote section and certificates */
+}
+
+.certificatesTitle {
+  grid-column: 1;
+  font-size: 5rem; /* Ajusta el tamaño según tus necesidades */
+  color: #333; /* Color del texto */
+  margin: 0.1rem; /* Espacio arriba y abajo del título */
+  text-align: center; /* Alineación centrada */
+  margin-top: 1rem;
 }
 
 .certificatesLinks a {
@@ -62,11 +71,18 @@
   color: #333; /* Text color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
-  margin: 1rem; /* Space around each link */
+  margin: 1.2rem; /* Space around each link */
+  display: inline-flex; /* Para alinear íconos y texto */
+  align-items: center; /* Centrar verticalmente */
+  gap: 0.5rem; 
 }
 
 .certificatesLinks a:hover {
   background-color: #eaeaea; /* Light grey on hover, Apple-like */
+}
+
+.certificatesLinks a svg {
+  font-size: 1.5rem; /* Tamaño del ícono */
 }
 
 /* You might want to adjust the h1 size, font-weight, and letter-spacing for desktop as well */
@@ -83,9 +99,8 @@
   color: #4a90e2; /* Color of the icon */
   margin-bottom: 1rem;
   position: relative; /* Relative positioning to move icon */
-  left: -25px; /* Move to the left by 20px */
-  top: -75px; /* Move up by 20px */
-  /* Add a transition if you want changes to be animated */
+  right: -350px; 
+  top: 140px; /* Move up by 20px */
   transition: left 0.3s, top 0.3s;
 }
 .quote {
@@ -159,7 +174,7 @@
 .certificationIcon {
   font-size: 3rem; /* Tamaño del icono */
   color: #4a90e2; /* Color del icono */
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
 }
 
 .certificatesLinks a {
@@ -238,7 +253,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    text-align: left;
+    text-align: center;
   }
 
   .quoteSection {
@@ -270,9 +285,13 @@
     display: inline-flex;
     flex: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 2rem;
     padding: 0.5rem;
+  }
+
+  .certificatesTitle, .certificatesLinks {
+    grid-column: 1; /* Ambos ocupan la misma columna en móviles */
   }
 
   .certificatesLinks a {
@@ -284,13 +303,13 @@
     color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
-    margin: 10px 0; /* Espaciado entre enlaces */
+    margin: 12px; /* Espaciado entre enlaces */
   }
 
   .certificationIcon {
-    left: 5%;
+    left: 7%;
     transform: translateX(-50%);
-    top: -30px;
+    top: -5px;
   }
 
   .resumeButton {
