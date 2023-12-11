@@ -1,7 +1,7 @@
 /* navbar.module.css */
 .navbar {
     position: fixed;
-    top: 0;
+    top: -1px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,7 @@
     background-color: #333;
     color: white;
     padding: 1rem;
-    z-index: 1000;
+    z-index: 2000;
     box-sizing: border-box;
   }
 
