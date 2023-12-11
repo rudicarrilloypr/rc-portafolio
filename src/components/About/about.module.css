@@ -51,7 +51,7 @@
   flex-wrap: wrap;
   justify-content:flex-end; /* Center the certificates */
   gap: 2rem; /* Space between certificates */
-  margin-top: 1rem; /* Space between quote section and certificates */
+  margin-top: 3.5rem; /* Space between quote section and certificates */
 }
 
 .certificatesLinks a {
@@ -110,6 +110,7 @@
   transition: background-color 0.3s;
   display: inline-block; /* Para que el botón no ocupe todo el ancho */
   margin-top: 0.1rem; /* Espacio adicional arriba del botón */
+  font-family: 'Helvetica Neue', sans-serif
 }
 
 .resumeButton:hover {
