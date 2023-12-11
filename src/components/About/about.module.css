@@ -100,6 +100,22 @@
   margin-top: 10px;
   font-size: 1.5rem;
 }
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 5%;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 0.1rem; /* Espacio adicional arriba del botón */
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
 }
 
 @media (max-width: 768px) {
@@ -188,7 +204,7 @@
 
 .quote {
   font-style: italic;
-  margin: 0;
+  margin: 10;
 }
 
 .author {
@@ -196,6 +212,23 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
 }
 
 /* Estilos para Tablet */
@@ -211,6 +244,17 @@
     grid-column: 2;
     margin: 0;
     padding-left: 1rem;
+  }
+
+  .profileImage {
+    width: 80%;
+    height: auto;
+  }
+
+  .quote {
+    font-style: italic;
+    margin: 15px;
+    line-height: 1.5; /* Increase line height for easier reading */
   }
 
   .profileImageWrapper {
@@ -247,5 +291,21 @@
     transform: translateX(-50%);
     top: -30px;
   }
+
+  .resumeButton {
+    background-color: #4faaf5;
+    padding: 0.7rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: inline-block; /* Para que el botón no ocupe todo el ancho */
+    margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+  }
+
+  .resumeButton:hover {
+    background-color: #a7a7a7;
+  }  
   
 }

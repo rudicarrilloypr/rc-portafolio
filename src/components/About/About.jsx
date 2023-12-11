@@ -11,6 +11,7 @@ function About() {
       <div className={styles.profileImageWrapper}>
   <img src={profileImage} alt="Rudi Carrillo" className={styles.profileImage}/>
 </div>
+<a href="https://drive.google.com/file/d/18ePzDb0wrpynwiEKyil2uMHdhFAddWCl/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className={styles.resumeButton}>My Resume</a>
         <p className={styles.quote}>"As a software developer, my passion is crafting seamless solutions, embracing both front and back-end challenges with a unique blend of creativity, technical expertise, and entrepreneurial spirit. My approach mirrors the dynamism of combining an aesthetic eye, problem-solving skills, and strategic drive. This fusion enables me to deliver innovative and efficient software solutions, making me a versatile and valuable asset to any team aiming to transform ideas into reality..."</p>
         <p className={styles.author}>- Rudi Carrillo</p>
       </div>
