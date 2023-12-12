@@ -305,6 +305,8 @@
   }
   .closeButton {
     display: block; /* Visible solo en móviles */
+    left: 15px;
+    z-index: 3000;
   }
   .techBadge {
     font-size: 0.7rem; /* Tamaño de fuente más pequeño para móviles */
@@ -315,5 +317,6 @@
     top: 580px;
     right: 20px;
     font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+    z-index: 1000;
   }
 }
