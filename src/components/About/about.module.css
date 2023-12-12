@@ -1,8 +1,53 @@
+.skillsSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.skillBox {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 30%; /* Ajusta según necesidades */
+  text-align: center;
+}
+
+.skillBox h3 {
+  margin-top: 0.5rem;
+  color: #333;
+  font-size: 20px;
+}
+
+.skillBox ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 19px;
+}
+
+.skillIcon {
+  font-size: 2rem;
+  color: #4a90e2;
+}
+
 /* Base styles for desktop */
 @media (min-width: 768px) {
 .about {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Adjust if you want a different ratio between image and text */
+  grid-template-columns: 2fr; /* Adjust if you want a different ratio between image and text */
   grid-gap: 2rem; /* Spacing between image and text */
   align-items: center;
   background-color: #f1f1f1; /* Apple-like light grey background */
@@ -11,6 +56,7 @@
   box-sizing: border-box;
   height: auto;
   text-align: left; /* Align text to the left for a magazine-like layout */
+  justify-items: center;
 }
 
 .quoteSection {
@@ -47,11 +93,20 @@
 
 .certificates {
   grid-column: 1 / -1; /* Stretch across all columns */
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content:flex-end; /* Center the certificates */
   gap: 2rem; /* Space between certificates */
-  margin-top: 1rem; /* Space between quote section and certificates */
+  margin-top: -5rem; /* Space between quote section and certificates */
+}
+
+.certificatesTitle {
+  grid-column: 1;
+  font-size: 5rem; /* Ajusta el tamaño según tus necesidades */
+  color: #333; /* Color del texto */
+  margin: 0.1rem; /* Espacio arriba y abajo del título */
+  text-align: center; /* Alineación centrada */
+  margin-top: 1rem;
 }
 
 .certificatesLinks a {
@@ -62,11 +117,18 @@
   color: #333; /* Text color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
-  margin: 1rem; /* Space around each link */
+  margin: 1.2rem; /* Space around each link */
+  display: inline-flex; /* Para alinear íconos y texto */
+  align-items: center; /* Centrar verticalmente */
+  gap: 0.5rem; 
 }
 
 .certificatesLinks a:hover {
   background-color: #eaeaea; /* Light grey on hover, Apple-like */
+}
+
+.certificatesLinks a svg {
+  font-size: 1.5rem; /* Tamaño del ícono */
 }
 
 /* You might want to adjust the h1 size, font-weight, and letter-spacing for desktop as well */
@@ -74,7 +136,7 @@
   font-size: 3.5rem; /* Larger size for desktop */
   font-weight: 300; /* Slightly bolder than the mobile version */
   letter-spacing: normal; /* Default letter spacing */
-  margin-left: 40px;
+  margin-left: 50px;
   
 }
 
@@ -83,9 +145,8 @@
   color: #4a90e2; /* Color of the icon */
   margin-bottom: 1rem;
   position: relative; /* Relative positioning to move icon */
-  left: -25px; /* Move to the left by 20px */
-  top: -75px; /* Move up by 20px */
-  /* Add a transition if you want changes to be animated */
+  right: -350px; 
+  top: 140px; /* Move up by 20px */
   transition: left 0.3s, top 0.3s;
 }
 .quote {
@@ -100,6 +161,23 @@
   margin-top: 10px;
   font-size: 1.5rem;
 }
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 5%;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 0.1rem; /* Espacio adicional arriba del botón */
+  font-family: 'Helvetica Neue', sans-serif
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
 }
 
 @media (max-width: 768px) {
@@ -142,7 +220,7 @@
 .certificationIcon {
   font-size: 3rem; /* Tamaño del icono */
   color: #4a90e2; /* Color del icono */
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
 }
 
 .certificatesLinks a {
@@ -188,7 +266,7 @@
 
 .quote {
   font-style: italic;
-  margin: 0;
+  margin: 10;
 }
 
 .author {
@@ -196,21 +274,84 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
+.skillsSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 5px;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 6px;
+}
+
+.skillBox h3 {
+font-size: 15px;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+}
 }
 
 /* Estilos para Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .skillsSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
   .about {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display:inline-block;
     align-items: center;
-    text-align: left;
+    text-align: center;
   }
 
   .quoteSection {
     grid-column: 2;
     margin: 0;
     padding-left: 1rem;
+  }
+
+  .profileImage {
+    width: 80%;
+    height: auto;
+  }
+
+  .quote {
+    font-style: italic;
+    margin: 15px;
+    line-height: 1.5; /* Increase line height for easier reading */
   }
 
   .profileImageWrapper {
@@ -225,9 +366,13 @@
     display: inline-flex;
     flex: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
+    margin-top: 5rem;
     padding: 0.5rem;
+  }
+
+  .certificatesTitle, .certificatesLinks {
+    grid-column: 1; /* Ambos ocupan la misma columna en móviles */
   }
 
   .certificatesLinks a {
@@ -239,13 +384,29 @@
     color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
-    margin: 10px 0; /* Espaciado entre enlaces */
+    margin: 12px; /* Espaciado entre enlaces */
   }
 
   .certificationIcon {
-    left: 5%;
+    left: 7%;
     transform: translateX(-50%);
-    top: -30px;
+    top: -5px;
   }
+
+  .resumeButton {
+    background-color: #4faaf5;
+    padding: 0.7rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: inline-block; /* Para que el botón no ocupe todo el ancho */
+    margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+  }
+
+  .resumeButton:hover {
+    background-color: #a7a7a7;
+  }  
   
 }
