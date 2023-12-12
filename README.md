@@ -42,7 +42,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Click here]() to see the project's deployment on GitHub pages.
+[Click here](https://rudicarrillo.com/) to see Rudi Carrillo's portfolio.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
