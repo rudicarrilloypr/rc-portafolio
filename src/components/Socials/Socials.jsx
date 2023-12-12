@@ -7,7 +7,7 @@ function Socials() {
   return (
     <section id="socials" className={styles.socials}>
       <h1 className={styles.title}>More Insights</h1>
-      <p className={styles.subtitle}>Exploring the Intersection of Technology and Humanity</p>
+      <p className={styles.subtitle}>click the image to discover</p>
       
       <div className={styles.blogPreview}>
         <h2 className={styles.blogTitle}>The Impact of AI on Software Development</h2>
