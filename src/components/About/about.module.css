@@ -1,8 +1,53 @@
+.skillsSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.skillBox {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 30%; /* Ajusta según necesidades */
+  text-align: center;
+}
+
+.skillBox h3 {
+  margin-top: 0.5rem;
+  color: #333;
+  font-size: 20px;
+}
+
+.skillBox ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 19px;
+}
+
+.skillIcon {
+  font-size: 2rem;
+  color: #4a90e2;
+}
+
 /* Base styles for desktop */
 @media (min-width: 768px) {
 .about {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Adjust if you want a different ratio between image and text */
+  grid-template-columns: 2fr; /* Adjust if you want a different ratio between image and text */
   grid-gap: 2rem; /* Spacing between image and text */
   align-items: center;
   background-color: #f1f1f1; /* Apple-like light grey background */
@@ -11,6 +56,7 @@
   box-sizing: border-box;
   height: auto;
   text-align: left; /* Align text to the left for a magazine-like layout */
+  justify-items: center;
 }
 
 .quoteSection {
@@ -90,7 +136,7 @@
   font-size: 3.5rem; /* Larger size for desktop */
   font-weight: 300; /* Slightly bolder than the mobile version */
   letter-spacing: normal; /* Default letter spacing */
-  margin-left: 40px;
+  margin-left: 50px;
   
 }
 
@@ -245,13 +291,48 @@
   background-color: #a7a7a7;
 }
 
+.skillsSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 5px;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 6px;
+}
+
+.skillBox h3 {
+font-size: 15px;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+}
 }
 
 /* Estilos para Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .skillsSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
   .about {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display:inline-block;
     align-items: center;
     text-align: center;
   }
@@ -286,7 +367,7 @@
     flex: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 5rem;
     padding: 0.5rem;
   }
 
