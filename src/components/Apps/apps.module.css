@@ -1,0 +1,322 @@
+/* apps.module.css */
+.apps {
+  padding: 1.5rem 0.2rem;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.apps h1 {
+  font-size: 2.5rem; /* Tamaño grande pero elegante */
+  font-weight: 300; /* Fuente ligera */
+  color: #333; /* Color oscuro para contraste */
+  text-align: center; /* Alineación centrada */
+  margin-top: 0; /* Reducir el margen superior */
+  margin-bottom: 1rem; /* Espaciado debajo del título */
+  letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
+}
+
+.slide {
+  padding: 15px;
+  text-align: center;
+  /*background: #f1f1f1;*/
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Reducir el ancho del recuadro */
+  height: 600px;
+  margin: 0 0; /* Centrar horizontalmente en su espacio */
+  background-size: cover; /* Asegúrate de que la imagen cubra todo el recuadro */
+  position: relative; /* Para la capa superpuesta */
+  background-color: transparent; /* En lugar de background: #f1f1f1; */
+  background-position: center; /* Asegurar que la imagen esté centrada */
+  background-repeat: no-repeat; 
+}
+
+.fortnite {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.08.38_s2n0ez.png');
+}
+
+.airPurity {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.09.34_twiex8.png');
+}
+
+.actionsApp {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701847152/IMG_7669_ri8ojb.png');
+}
+
+.mathMagicians {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.12.58_edfcyy.png');
+}
+
+.toDoList {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846970/Captura_de_pantalla_2023-12-06_a_la_s_1.13.50_yd2wmq.png');
+}
+
+.worldTour {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846970/Captura_de_pantalla_2023-12-06_a_la_s_1.14.47_usoykg.png');
+}
+
+.bookAConcert {
+  background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.15.24_ufmzn5.png');
+}
+
+/* Estilos de las flechas */
+.slickPrev {
+  left: -19px; /* Alinear a la izquierda */
+  margin-left: 30px;
+}
+
+.slickNext {
+  right: 29px; /* Alinear a la derecha */
+  margin-right: 30px;
+}
+
+.slickNext, .slickPrev {
+  background-color: #a0a0a0;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Aumentar z-index para colocar sobre el contenido */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: black;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  /*position: absolute; Mantener la posición absoluta */
+  top: 50%; /* Alineación vertical en el centro */
+  transform: translateY(-50%); /* Centrar verticalmente */
+  box-sizing: border-box;
+}
+
+.infoButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.infoButton:hover {
+  background-color: #f0f0f0;
+}
+
+.slideContent {
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+  height: 300px; /* Altura fija */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
+  border-radius: 15px; /* Opcional: bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+}
+
+
+.slideOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-center .slide {
+  transform: scale(1.05); /* Escalar ligeramente el slide actual */
+  z-index: 5000; /* Asegurarse de que esté encima de los demás slides */
+}
+
+.slide a {
+  color: rgb(60, 94, 207);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.slide a:hover {
+  color: rgb(175, 191, 222);
+}
+
+.slide h3 {
+  font-size: 24px; /* Aumentar el tamaño de la fuente */
+  font-weight: bold; /* Hacer el texto más grueso */
+  color: #333; /* Color oscuro para mayor contraste */
+  margin-bottom: 20px; /* Aumentar el espaciado */
+}
+
+.slide p {
+  font-size: 16px; /* Aumentar el tamaño de la fuente */
+  color: #666; /* Color más suave */
+  margin-bottom: 20px; /* Aumentar el espaciado */
+}
+
+.slide a {
+  font-weight: bold; /* Hacer el texto de los enlaces más grueso */
+  color: #1a73e8; /* Color de enlace más vibrante */
+}
+
+.slide a:hover {
+  color: #4a90e2; /* Color de enlace al pasar el mouse */
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos */
+  margin-top: 1px; /* Espacio adicional arriba, si es necesario */
+  margin-left: -30px; /* Espacio adicional a la izquierda, si es necesario */
+}
+
+/* Estilos para los enlaces */
+.linksContainer a {
+  text-decoration: none;
+  color: #1a73e8; /* Color de enlace */
+  font-weight: bold; /* Negrita para destacar */
+}
+
+.linksContainer a:hover {
+  color: #4a90e2; /* Color al pasar el mouse */
+}
+
+/* Estilos para el separador */
+.linksContainer span {
+  color: #666; /* Color del separador */
+}
+
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 50%; /* Forma circular */
+  font-size: 20px;
+  color: #333; /* Color oscuro para el texto */
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  width: 30px; /* Tamaño fijo */
+  height: 30px; /* Tamaño fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0; /* Cambio de color al pasar el mouse */
+  border-color: #bbb; /* Cambio de color del borde al pasar el mouse */
+}
+
+.techBadge {
+  display: inline-block;
+  background-color: #f1f1f1; /* Fondo claro */
+  color: #333; /* Texto oscuro */
+  padding: 5px 10px; /* Espaciado interno */
+  margin: 2px; /* Espaciado externo */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 0.8rem; /* Tamaño de fuente pequeño */
+  font-weight: 500; /* Semi-negrita */
+  text-align: center;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.playPauseIcon {
+  position: absolute;
+  top: 700px;
+  right: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 24px; /* Ajusta el tamaño según tus necesidades */
+  color: white; /* O el color que prefieras */
+}
+
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .apps {
+    padding: 1rem 0.2rem;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .apps h1 {
+    font-size: 1.7rem; /* Tamaño más pequeño para dispositivos móviles */
+  }
+
+  .slickNext, .slickPrev {
+    display: none; /* Ocultar flechas para dispositivos móviles */
+  }
+  .slide {
+    width: 90%; /* Ancho más grande en dispositivos móviles */
+    height: 300px; /* Altura automática en dispositivos móviles */
+    padding: 0%;
+    background-size: cover; /* Asegúrate de que la imagen cubra todo el recuadro */
+    position: relative; /* Para la capa superpuesta */
+  }
+  
+  .slick-slide.slick-center .slide {
+    transform: scale(1); /* Sin escala en dispositivos móviles */
+  }
+
+  .slick-slide.slick-center .slide {
+    transform: scale(1); /* Sin escala en dispositivos móviles */
+  }
+  
+  .slide p {
+    margin-bottom: 15px;
+  }
+
+  .slideContent {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+    width: 400px; /* Ancho fijo */
+    height: 300px; /* Altura fija */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
+    border-radius: 15px; /* Opcional: bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+  }
+  .closeButton {
+    display: block; /* Visible solo en móviles */
+    left: 15px;
+    z-index: 3000;
+  }
+  .techBadge {
+    font-size: 0.7rem; /* Tamaño de fuente más pequeño para móviles */
+    padding: 3px 7px; /* Menor espaciado interno para móviles */
+  }
+
+  .playPauseIcon {
+    top: 580px;
+    right: 20px;
+    font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+    z-index: 1000;
+  }
+}

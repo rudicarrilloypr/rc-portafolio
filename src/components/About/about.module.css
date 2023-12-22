@@ -1,0 +1,412 @@
+.skillsSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.skillBox {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 30%; /* Ajusta según necesidades */
+  text-align: center;
+}
+
+.skillBox h3 {
+  margin-top: 0.5rem;
+  color: #333;
+  font-size: 20px;
+}
+
+.skillBox ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 19px;
+}
+
+.skillIcon {
+  font-size: 2rem;
+  color: #4a90e2;
+}
+
+/* Base styles for desktop */
+@media (min-width: 768px) {
+.about {
+  display: grid;
+  grid-template-columns: 2fr; /* Adjust if you want a different ratio between image and text */
+  grid-gap: 2rem; /* Spacing between image and text */
+  align-items: center;
+  background-color: #f1f1f1; /* Apple-like light grey background */
+  color: #333; /* Text color similar to Apple's grey text */
+  padding: 2rem; /* More padding for a spacious layout */
+  box-sizing: border-box;
+  height: auto;
+  text-align: left; /* Align text to the left for a magazine-like layout */
+  justify-items: center;
+}
+
+.quoteSection {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  max-width: 800px; 
+  text-align: right;
+  background-color: #fff; /* White background for the quote section */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 0; /* Adjust margin as needed */
+  border-left: 5px solid #4a90e2;
+  padding: 2rem;
+}
+
+.profileImageWrapper {
+  grid-row: 1 / -1; /* Makes the image stretch the full height of the quote section */
+  width: 100%; /* Full width of the grid column */
+  height: auto; /* Height is set automatically */
+  max-width: 400px; /* Max width of the image */
+  max-height: 600px; /* Max height to maintain aspect ratio */
+  margin: 0 auto; /* Center the image in its grid column */
+  overflow: hidden;
+  margin-left: -120px;
+}
+
+.profileImage {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  object-position: top; /* Adjust this to focus on the face */
+}
+
+.certificates {
+  grid-column: 1 / -1; /* Stretch across all columns */
+  display: grid;
+  flex-wrap: wrap;
+  justify-content:flex-end; /* Center the certificates */
+  gap: 2rem; /* Space between certificates */
+  margin-top: -5rem; /* Space between quote section and certificates */
+}
+
+.certificatesTitle {
+  grid-column: 1;
+  font-size: 5rem; /* Ajusta el tamaño según tus necesidades */
+  color: #333; /* Color del texto */
+  margin: 0.1rem; /* Espacio arriba y abajo del título */
+  text-align: center; /* Alineación centrada */
+  margin-top: 1rem;
+}
+
+.certificatesLinks a {
+  background-color: #fff; /* White background for links */
+  padding: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333; /* Text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  margin: 1.2rem; /* Space around each link */
+  display: inline-flex; /* Para alinear íconos y texto */
+  align-items: center; /* Centrar verticalmente */
+  gap: 0.5rem; 
+}
+
+.certificatesLinks a:hover {
+  background-color: #eaeaea; /* Light grey on hover, Apple-like */
+}
+
+.certificatesLinks a svg {
+  font-size: 1.5rem; /* Tamaño del ícono */
+}
+
+/* You might want to adjust the h1 size, font-weight, and letter-spacing for desktop as well */
+.about h1 {
+  font-size: 3.5rem; /* Larger size for desktop */
+  font-weight: 300; /* Slightly bolder than the mobile version */
+  letter-spacing: normal; /* Default letter spacing */
+  margin-left: 50px;
+  
+}
+
+.certificationIcon {
+  font-size: 6rem; /* Size of the icon */
+  color: #4a90e2; /* Color of the icon */
+  margin-bottom: 1rem;
+  position: relative; /* Relative positioning to move icon */
+  right: -350px; 
+  top: 140px; /* Move up by 20px */
+  transition: left 0.3s, top 0.3s;
+}
+.quote {
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5; /* Increase line height for easier reading */
+}
+
+.author {
+  margin: 0; /* Remove default margin */
+  font-weight: bolder;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 5%;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 0.1rem; /* Espacio adicional arriba del botón */
+  font-family: 'Helvetica Neue', sans-serif
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
+}
+
+@media (max-width: 768px) {
+.about {
+  padding: 2rem 1rem;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+  text-align: center;
+  height: auto;
+}
+
+.about h1 {
+  font-size: 1.5rem; /* Tamaño grande pero elegante */
+  font-weight: 300; /* Fuente ligera */
+  color: #333; /* Color oscuro para contraste */
+  text-align: center; /* Alineación centrada */
+  margin-top: 0; /* Reducir el margen superior */
+  margin-bottom: 1rem; /* Espaciado debajo del título */
+  letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
+}
+
+.certificates {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+  .certificatesLinks {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto; 
+    justify-content: center;
+    gap: 0; /* Espacio entre filas */
+    width: 100%; /* Ancho completo */
+    padding: 10px 0; /* Espaciado lateral */
+  }
+
+.certificationIcon {
+  font-size: 3rem; /* Tamaño del icono */
+  color: #4a90e2; /* Color del icono */
+  margin-bottom: -1rem;
+}
+
+.certificatesLinks a {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  margin: 10px 0; /* Espaciado entre enlaces */
+}
+
+.certificatesLinks a:hover {
+  background-color: #eaeaea;
+}
+
+.quoteSection {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  border-radius: 10px;
+}
+
+.profileImageWrapper {
+  width: 100px; /* Size of the circular container */
+  height: 100px; /* Size of the circular container */
+  border-radius: 50%;
+  overflow: hidden;
+  float: right; /* Or left, depending on where you want the image */
+  margin-right: 15px; /* Adjust the margin as needed */
+}
+
+.profileImage {
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+  object-position: 50%;
+}
+
+.quote {
+  font-style: italic;
+  margin: 10;
+}
+
+.author {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.resumeButton {
+  background-color: #4faaf5;
+  padding: 0.7rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+  margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+}
+
+.resumeButton:hover {
+  background-color: #a7a7a7;
+}
+
+.skillsSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 5px;
+}
+
+.skillBox li {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 6px;
+}
+
+.skillBox h3 {
+font-size: 15px;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+}
+}
+
+/* Estilos para Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .skillsSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  .about {
+    display:inline-block;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quoteSection {
+    grid-column: 2;
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .profileImage {
+    width: 80%;
+    height: auto;
+  }
+
+  .quote {
+    font-style: italic;
+    margin: 15px;
+    line-height: 1.5; /* Increase line height for easier reading */
+  }
+
+  .profileImageWrapper {
+    grid-column: 1;
+    grid-row: 1;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .certificates {
+    display: inline-flex;
+    flex: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    padding: 0.5rem;
+  }
+
+  .certificatesTitle, .certificatesLinks {
+    grid-column: 1; /* Ambos ocupan la misma columna en móviles */
+  }
+
+  .certificatesLinks a {
+    display: inline-flex;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    margin: 12px; /* Espaciado entre enlaces */
+  }
+
+  .certificationIcon {
+    left: 7%;
+    transform: translateX(-50%);
+    top: -5px;
+  }
+
+  .resumeButton {
+    background-color: #4faaf5;
+    padding: 0.7rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: inline-block; /* Para que el botón no ocupe todo el ancho */
+    margin-top: 1.2rem; /* Espacio adicional arriba del botón */
+  }
+
+  .resumeButton:hover {
+    background-color: #a7a7a7;
+  }  
+  
+}

@@ -1,0 +1,73 @@
+/* portfolio.module.css */
+.portfolio {
+    padding: 6rem 1rem;
+    background-color: #f1f1f1;
+    text-align: center;
+    margin-top: 70px;
+    box-sizing: border-box;
+  }
+
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+
+  .portfolio h1 {
+    margin-left: 12px;
+  }
+
+  .portfolio h2 {
+   font-size: 20px;
+   margin-bottom: 2px;
+  
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 35px;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .icon:hover {
+    color: rgb(181, 188, 183);
+  }
+  
+  .verifiedIcon {
+    color: #1DA1F2; /* Color azul similar al de Twitter para el icono de verificación */
+    margin-left: -2px; /* Espacio entre el nombre y el icono */
+    margin-bottom: 17px;
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+    font-size: 0.9rem; /* Tamaño del icono */
+  }
+
+@media (max-width: 768px) {
+    .profileImage {
+      width: 80px; /* Tamaño más pequeño para dispositivos móviles */
+      height: 80px;
+    }
+
+    .portfolio {
+      margin-top: 60px; /* Ajusta para móviles si es necesario */
+      padding: 3.9rem 1rem;
+    }
+    .portfolio h1 {
+      margin-left: 12px;
+    }
+
+    .portfolio h2 {
+      font-size: 18px;
+      margin-top: -9px;
+    }
+
+    }

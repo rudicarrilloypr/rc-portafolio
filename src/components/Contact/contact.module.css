@@ -1,0 +1,53 @@
+/* contact.module.css */
+.contact {
+  padding: 4rem 1rem;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contact h1 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formGroup textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #333;
+}
