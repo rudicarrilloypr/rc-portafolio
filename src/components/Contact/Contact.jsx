@@ -1,10 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './contact.module.css';
 
 function Contact() {
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const contactRef = useRef(null);
+  const formRef = useRef(null); // Referencia al formulario
+
+  useEffect(() => {
+    // Cargar datos guardados del formulario al iniciar
+    const formData = JSON.parse(localStorage.getItem('contactFormData'));
+    if (formData && formRef.current) {
+      formRef.current.firstName.value = formData.firstName || '';
+      formRef.current.lastName.value = formData.lastName || '';
+      formRef.current._replyto.value = formData._replyto || '';
+      formRef.current.message.value = formData.message || '';
+    }
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    const formData = JSON.parse(localStorage.getItem('contactFormData')) || {};
+    formData[name] = value;
+    localStorage.setItem('contactFormData', JSON.stringify(formData));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +45,7 @@ function Contact() {
       if (response.ok) {
         setStatus('Message Sent Successfully');
         form.reset();
+        localStorage.removeItem('contactFormData'); // Limpiar datos guardados del formulario
       } else {
         throw new Error('Network response was not ok.');
       }
@@ -50,18 +70,18 @@ function Contact() {
       <h1>Let's Connect</h1>
       <p>"Transform your vision into reality - Let's build together."</p>
 
-      <form action="https://formspree.io/f/mgebdlbl" method="POST" onSubmit={handleSubmit}>
+      <form ref={formRef} action="https://formspree.io/f/mgebdlbl" method="POST" onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <input type="text" name="firstName" placeholder="First Name" required />
+          <input type="text" name="firstName" placeholder="First Name" required onChange={handleInputChange} />
         </div>
         <div className={styles.formGroup}>
-          <input type="text" name="lastName" placeholder="Last Name" required />
+          <input type="text" name="lastName" placeholder="Last Name" required onChange={handleInputChange} />
         </div>
         <div className={styles.formGroup}>
-          <input type="email" name="_replyto" placeholder="Your Email" required />
+          <input type="email" name="_replyto" placeholder="Your Email" required onChange={handleInputChange} />
         </div>
         <div className={styles.formGroup}>
-          <textarea name="message" placeholder="Your Message" required></textarea>
+          <textarea name="message" placeholder="Your Message" required onChange={handleInputChange}></textarea>
         </div>
         <button type="submit" className={styles.submitButton} disabled={isLoading}>
           {isLoading ? 'Sending...' : 'Contact'}
