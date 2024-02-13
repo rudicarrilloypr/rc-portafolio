@@ -40,7 +40,7 @@
 **Portfolio** developed by Rodolfo Carrillo Garcia to showcase his skills and projects.
 
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live <a name="live-demo"></a>
 
 [Click here](https://rudicarrillo.com/) to see Rudi Carrillo's portfolio.
 
