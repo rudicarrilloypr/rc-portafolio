@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './contact.module.css';
 
 function Contact() {
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const contactRef = useRef(null); // Referencia para la sección de contacto
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,11 +33,20 @@ function Contact() {
       setStatus('Error Sending Message');
     } finally {
       setIsLoading(false);
+
+      // Establece un temporizador para limpiar el mensaje y desplazar la vista
+      setTimeout(() => {
+        setStatus('');
+        // Desplaza hacia la sección de contacto
+        if (contactRef.current) {
+          contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 5000); // Ajusta el tiempo según sea necesario
     }
   };
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" ref={contactRef} className={styles.contact}>
       <h1>Let's Connect</h1>
       <p>"Transform your vision into reality - Let's build together."</p>
 
