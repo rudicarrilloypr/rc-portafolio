@@ -4,7 +4,7 @@ import styles from './contact.module.css';
 function Contact() {
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const contactRef = useRef(null); // Referencia para la sección de contacto
+  const contactRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
