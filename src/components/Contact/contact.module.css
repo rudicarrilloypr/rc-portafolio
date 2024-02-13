@@ -51,3 +51,24 @@ form {
 .submitButton:hover {
   background-color: #333;
 }
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #fff;
+  animation: fadeIn 0.5s;
+}
+
+.success {
+  background-color: #4BB543;
+}
+
+.error {
+  background-color: #ff3333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
