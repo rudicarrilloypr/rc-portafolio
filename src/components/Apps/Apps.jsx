@@ -7,6 +7,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
+   {
+    name: "Barradas.mx",
+    url: "https://github.com/rudicarrilloypr/barradas-dashboard",
+    demo: "https://www.barradas.mx/",
+    description: "Website that allows customers to browse product catalogs, view specifications, request quotes, and make selected online purchases.",
+    builtWith: ["JavaScript", "Wordpress", "CSS", "Node.js"],
+    className: "barradas"
+  },
   {
     name: "Fortnite New Cosmetics",
     url: "https://github.com/rudicarrilloypr/fortnite-api",
@@ -14,6 +22,14 @@ const projects = [
     description: "Web application that receives updated data from the official Fortnite API and shows the upcoming cosmetics into the game.",
     builtWith: ["JavaScript", "Webpack", "HTML", "CSS", "Node.js", "Fortnite API"],
     className: "fortnite"
+  },
+    {
+    name: "Esterito Hostel",
+    url: "https://github.com/rudicarrilloypr/landingpage",
+    demo: "https://esteritohostel.com/",
+    description: "Esterito Hostel official site that shows where clients or interested people can find more info about the hostel in Baja California",
+    builtWith: ["Javascript", "CSS", "Bootstrap", "Node.js", "RSpec"],
+    className: "actionsApp"
   },
   {
     name: "Book a Concert",
@@ -30,14 +46,6 @@ const projects = [
     description: "Mobile web application to check and provide Mexico's current air pollution quality and beautiful pictures of iconic Mexico places, coming from OpenWeather and Unsplash API.",
     builtWith: ["React", "Webpack", "JavaScript", "HTML", "CSS", "Node.js", "Unsplash API", "OpenWeather API"],
     className: "airPurity"
-  },
-  {
-    name: "Actions App",
-    url: "https://github.com/rudicarrilloypr/actions-app",
-    demo: "https://actions-app.onrender.com/",
-    description: "Mobile web application where you can manage your budget; you can create a list of transactions associated with a category, so you can see how much money you spent and on what.",
-    builtWith: ["Ruby on Rails", "PostgreSQL", "Javascript", "CSS", "Bootstrap", "Node.js", "RSpec"],
-    className: "actionsApp"
   },
   {
     name: "Math Magicians",
