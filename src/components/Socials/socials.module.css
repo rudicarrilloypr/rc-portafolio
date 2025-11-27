@@ -1,65 +1,162 @@
 .socials {
-  padding: 4rem 1rem;
-  background-color: #f1f1f1;
-  text-align: center;
-  font-family: 'Helvetica Neue', sans-serif; /* Estilo de fuente similar a Apple */
+  margin-top: 12px;
 }
 
-.title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+/* Header */
+.header {
+  text-align: left;
+  margin-bottom: 18px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
-.blogPreview {
-  margin-top: 2rem;
-  padding: 1rem;
+/* Blog card */
+.blogCard {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(
+      to bottom right,
+      rgba(15, 23, 42, 0.9),
+      rgba(15, 23, 42, 0.98)
+    );
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .blogCard {
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 18px 18px 20px;
+  }
+}
+
+.blogText {
+  flex: 1;
 }
 
 .blogTitle {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 0.25rem;
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.blogAuthor {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
+.blogMeta {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.blogExcerpt {
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.blogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.blogLink:hover {
+  background: rgba(15, 23, 42, 1);
+  border-color: rgba(248, 250, 252, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Blog image */
+.imageWrapper {
+  flex: 0 0 240px;
+  max-width: 260px;
+  align-self: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.8);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-2px) scale(1.02);
 }
 
 .blogImage {
-  max-width: 80%;
+  display: block;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Añade un ligero sombreado para resaltar la imagen */
-  transition: transform 0.3s ease;
 }
 
-.blogImage:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
-}
-
+/* Footer */
 .footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  border-top: 1px solid #e1e1e1; /* Una línea sutil en la parte superior */
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding-top: 14px;
+  margin-top: 4px;
+}
+
+.footerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
 }
 
 .footerLogo {
-  max-width: 50px;
-  height: auto;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombreado para dar profundidad */
-  border-radius: 5px; /* Bordes redondeados ligeramente */
-  transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+  height: 30px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
 }
 
-.footerLogo:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón por encima */
+.footerText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+@media (max-width: 640px) {
+  .blogCard {
+    padding: 14px;
+  }
+
+  .imageWrapper {
+    max-width: 220px;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerText {
+    align-items: flex-start;
+  }
 }

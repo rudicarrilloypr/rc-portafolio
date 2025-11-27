@@ -8,47 +8,99 @@ import styles from './navbar.module.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef();
+  const navRef = useRef(null);
 
-    // Función para manejar clics fuera del navbar
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-    
-      // Agregar listener para clics fuera del navbar
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      // Limpiar el listener al desmontar el componente
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-    
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className={styles.navbar} ref={navRef}>
-      <img src={logo} alt="Logo" className={styles.logo} />
-      <div className={styles.menuIcon} onClick={() => setIsOpen(!isOpen)}>
-        <FontAwesomeIcon icon={faBars} />
-      </div>
-      <div className={`${styles.navItems} ${isOpen ? styles.showNav : ''}`}>
-        <Link activeClass={styles.active} to="portfolio" spy={true} smooth={true} offset={-70} duration={500}>
-          Portfolio
-        </Link>
-        <Link activeClass={styles.active} to="apps" spy={true} smooth={true} offset={-70} duration={500}>
-          Apps
-        </Link>
-        <Link activeClass={styles.active} to="about" spy={true} smooth={true} offset={-70} duration={500}>
-          About Me
-        </Link>
-        <Link activeClass={styles.active} to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-          Contact
-        </Link>
-        <Link activeClass={styles.active} to="socials" spy={true} smooth={true} offset={-70} duration={500}>
-          More
-        </Link>
+      <div className={styles.navInner}>
+        <div className={styles.brand}>
+          <img src={logo} alt="Rudi Carrillo logo" className={styles.logo} />
+          <span className={styles.brandText}>Rudi Carrillo</span>
+        </div>
+
+        <button
+          className={styles.menuIcon}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+
+        <div
+          className={`${styles.navItems} ${isOpen ? styles.showNav : ''}`}
+        >
+          <Link
+            activeClass={styles.active}
+            to="portfolio"
+            spy
+            smooth
+            offset={-80}
+            duration={500}
+            onClick={handleLinkClick}
+          >
+            Home
+          </Link>
+          <Link
+            activeClass={styles.active}
+            to="apps"
+            spy
+            smooth
+            offset={-80}
+            duration={500}
+            onClick={handleLinkClick}
+          >
+            Work
+          </Link>
+          <Link
+            activeClass={styles.active}
+            to="about"
+            spy
+            smooth
+            offset={-80}
+            duration={500}
+            onClick={handleLinkClick}
+          >
+            About
+          </Link>
+          <Link
+            activeClass={styles.active}
+            to="contact"
+            spy
+            smooth
+            offset={-80}
+            duration={500}
+            onClick={handleLinkClick}
+          >
+            Contact
+          </Link>
+          <Link
+            activeClass={styles.active}
+            to="socials"
+            spy
+            smooth
+            offset={-80}
+            duration={500}
+            onClick={handleLinkClick}
+          >
+            More
+          </Link>
+        </div>
       </div>
     </nav>
   );

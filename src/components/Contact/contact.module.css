@@ -1,74 +1,201 @@
-/* contact.module.css */
 .contact {
-  padding: 4rem 1rem;
-  background-color: #fff;
-  text-align: center;
-  box-sizing: border-box;
+  margin-top: 12px;
 }
 
-.contact h1 {
-  margin-bottom: 1rem;
+.header {
+  text-align: left;
+  margin-bottom: 18px;
 }
 
-.contact p {
-  margin-bottom: 2rem;
-  color: #666;
+.subtitle {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 520px;
 }
 
-form {
-  max-width: 500px;
-  margin: auto;
+/* Layout form + meta */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+/* Columna izquierda (meta info) */
+.meta {
+  flex: 0 0 260px;
+}
+
+.metaText {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.metaDetail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.metaValue {
+  font-size: 0.86rem;
+  color: var(--fg);
+}
+
+/* Form */
+.form {
+  flex: 1;
+  background: linear-gradient(
+      to bottom right,
+      rgba(248, 250, 252, 0.04),
+      rgba(15, 23, 42, 0.9)
+    );
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 18px 16px 16px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 20px 18px 18px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .row {
+    flex-direction: row;
+  }
 }
 
 .formGroup {
-  margin-bottom: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--fg);
+  font-size: 0.86rem;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: rgba(248, 250, 252, 0.9);
+  box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.75);
+  background: rgba(15, 23, 42, 1);
 }
 
 .formGroup textarea {
-  height: 150px;
+  min-height: 120px;
   resize: vertical;
 }
 
+/* Botón */
 .submitButton {
-  background-color: #000;
-  color: #fff;
+  margin-top: 6px;
+  width: 100%;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s;
+  background: radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.35), transparent 55%);
+  color: var(--fg);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.95);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
 
-.submitButton:hover {
-  background-color: #333;
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 1);
+  opacity: 0.98;
 }
 
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Mensajes */
 .message {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
-  color: #fff;
-  animation: fadeIn 0.5s;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  animation: fadeIn 0.3s ease;
 }
 
 .success {
-  background-color: #4BB543;
+  background: rgba(22, 163, 74, 0.16);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #bbf7d0;
 }
 
 .error {
-  background-color: #ff3333;
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  color: #fecaca;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
