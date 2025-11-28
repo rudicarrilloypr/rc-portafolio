@@ -18,7 +18,7 @@
 .layout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* base (desktop / tablet) */
 }
 
 @media (min-width: 768px) {
@@ -31,7 +31,7 @@
 
 /* Columna izquierda (meta info) */
 .meta {
-  flex: 0 0 260px;
+  flex: 0 0 200px;
 }
 
 .metaText {
@@ -259,7 +259,30 @@
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .formTerminal {
-    margin-top: 4px;
+  /* Menos aire en la sección de contacto y entre bloques */
+  .contact {
+    margin-top: -50px;
   }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .layout {
+    gap: 2px; /* antes 20px: acerca meta y form */
+  }
+
+  .meta {
+    margin-bottom: 0;
+  }
+
+  .metaText {
+    margin-bottom: 8px;
+  }
+
+  .formTerminal {
+    margin-top: 0; /* juntamos más el terminal al texto */
+  }
+
+  
 }
