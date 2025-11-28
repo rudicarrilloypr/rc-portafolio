@@ -28,11 +28,18 @@ function Navbar() {
   return (
     <nav className={styles.navbar} ref={navRef}>
       <div className={styles.navInner}>
+
+        {/* BRAND ------------------------------------------------ */}
         <div className={styles.brand}>
           <img src={logo} alt="Rudi Carrillo logo" className={styles.logo} />
-          <span className={styles.brandText}>Rudi Carrillo</span>
+
+          <div className={styles.brandTextBlock}>
+            <span className={styles.brandText}>Rudi Carrillo</span>
+            <span className={styles.brandSub}>Software Developer</span>
+          </div>
         </div>
 
+        {/* MOBILE MENU ICON ------------------------------------ */}
         <button
           className={styles.menuIcon}
           onClick={() => setIsOpen(!isOpen)}
@@ -42,9 +49,8 @@ function Navbar() {
           <FontAwesomeIcon icon={faBars} />
         </button>
 
-        <div
-          className={`${styles.navItems} ${isOpen ? styles.showNav : ''}`}
-        >
+        {/* NAV LINKS ------------------------------------------ */}
+        <div className={`${styles.navItems} ${isOpen ? styles.showNav : ''}`}>
           <Link
             activeClass={styles.active}
             to="portfolio"
@@ -56,6 +62,7 @@ function Navbar() {
           >
             Home
           </Link>
+
           <Link
             activeClass={styles.active}
             to="apps"
@@ -67,6 +74,7 @@ function Navbar() {
           >
             Work
           </Link>
+
           <Link
             activeClass={styles.active}
             to="about"
@@ -78,6 +86,7 @@ function Navbar() {
           >
             About
           </Link>
+
           <Link
             activeClass={styles.active}
             to="contact"
@@ -89,6 +98,7 @@ function Navbar() {
           >
             Contact
           </Link>
+
           <Link
             activeClass={styles.active}
             to="socials"

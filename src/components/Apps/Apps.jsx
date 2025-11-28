@@ -189,23 +189,7 @@ function Apps() {
                   <div className={styles.slideContentShell}>
                     <div className={styles.slideHeader}>
                       <h3>{project.name}</h3>
-                      <div className={styles.linksRow}>
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Live
-                        </a>
-                        <span>·</span>
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Source
-                        </a>
-                      </div>
+
                     </div>
 
                     <p className={styles.description}>{project.description}</p>
