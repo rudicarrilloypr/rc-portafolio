@@ -59,6 +59,24 @@
   color: var(--muted);
 }
 
+/* ---- CHIPS (override global .chip-row para que se vea bien aquí) ---- */
+
+/* Desktop / base: fila centrada con wrap si hace falta */
+:global(.chip-row) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+/* Ajustamos las chip para que el contenido quede bien centrado */
+:global(.chip-row .chip) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Redes sociales */
 .socialLinks {
   display: flex;
@@ -95,5 +113,18 @@
 
   .bio {
     font-size: 0.84rem;
+  }
+
+  /* En mobile: las 3 chips apiladas, mismo ancho */
+  :global(.chip-row) {
+    max-width: 320px;
+    margin-inline: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  :global(.chip-row .chip) {
+    width: 100%;
+    justify-content: center;
   }
 }
