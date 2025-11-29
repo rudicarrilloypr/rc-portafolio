@@ -6,21 +6,23 @@ import Apps from './components/Apps/Apps';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Socials from './components/Socials/Socials';
+import ResumeFab from './components/ResumeFab/ResumeFab';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-
       <main className="App-main">
         <Portfolio />
         <Apps />
         <About />
         <Contact />
+        <Socials />
       </main>
 
-      <Socials />
+      {/* Botón flotante de CV */}
+      <ResumeFab />
     </div>
   );
 }
