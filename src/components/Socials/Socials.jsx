@@ -1,13 +1,40 @@
 import React from 'react';
 import styles from './socials.module.css';
-import blogCover from '../../assets/rc-ai-cover.png';
+
+// Imports de imágenes
+import aiCover from '../../assets/rc-ai-cover.png';
+import juniorDevsCover from '../../assets/junior-devs-2025-cover.png';
 import logo from '../../assets/rc-sd-logo.PNG';
+
+// Array de artículos
+const articles = [
+  {
+    id: 'ai-impact',
+    title: 'The impact of AI on software development',
+    excerpt:
+      'A look at how AI tooling is changing the way developers design, ship and maintain software — and why the human side still matters.',
+    url: 'https://medium.com/@rudicarrilloypr/the-impact-of-ai-on-software-development-and-the-advent-of-futuristic-technologies-5653ee26d753',
+    cover: aiCover,
+    source: 'Medium',
+    date: '2024-10-10',
+  },
+  {
+    id: 'junior-devs-2025',
+    title: 'What Companies Actually Expect from Junior Developers in 2025',
+    excerpt:
+      'A realistic breakdown of the hidden expectations companies have for junior developers today — from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.',
+    url: 'https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX',
+    cover: juniorDevsCover,
+    source: 'Medium',
+    date: '2025-11-29',
+  },
+];
 
 function Socials() {
   return (
     <section id="socials" className={`section ${styles.socials}`}>
       <div className="section-inner">
-        {/* Usamos el mismo header global que en otras secciones */}
+
         <div className="section-header">
           <div>
             <h2 className="section-title">More insights</h2>
@@ -17,73 +44,42 @@ function Socials() {
           </div>
         </div>
 
-        <div className={styles.blogCard}>
-          <div className={styles.blogText}>
-            <h3 className={styles.blogTitle}>
-              The impact of AI on software development
-            </h3>
-            <p className={styles.blogMeta}>Written by Rudi Carrillo · Medium</p>
-            <p className={styles.blogExcerpt}>
-              A look at how AI tooling is changing the way developers design,
-              ship and maintain software — and why the human side still matters.
-            </p>
+        {/* Render dinámico */}
+        {articles.map((article) => (
+          <div key={article.id} className={styles.blogCard}>
+            <div className={styles.blogText}>
+              <h3 className={styles.blogTitle}>{article.title}</h3>
+              <p className={styles.blogMeta}>
+                Written by Rudi Carrillo · {article.source}
+              </p>
+              <p className={styles.blogExcerpt}>{article.excerpt}</p>
+
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.blogLink}
+              >
+                Read the article
+              </a>
+            </div>
+
             <a
-              href="https://medium.com/@rudicarrilloypr/the-impact-of-ai-on-software-development-and-the-advent-of-futuristic-technologies-5653ee26d753"
+              href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.blogLink}
+              className={styles.imageWrapper}
             >
-              Read the article
+              <img
+                src={article.cover}
+                alt={article.title}
+                className={styles.blogImage}
+              />
             </a>
           </div>
+        ))}
 
-          <a
-            href="https://medium.com/@rudicarrilloypr/the-impact-of-ai-on-software-development-and-the-advent-of-futuristic-technologies-5653ee26d753"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.imageWrapper}
-          >
-            <img
-              src={blogCover}
-              alt="The Impact of AI on Software Development"
-              className={styles.blogImage}
-            />
-          </a>
-        </div>
-
-                <div className={styles.blogCard}>
-          <div className={styles.blogText}>
-            <h3 className={styles.blogTitle}>
-              What Companies Actually Expect from Junior Developers in 2025
-            </h3>
-            <p className={styles.blogMeta}>Written by Rudi Carrillo · Medium</p>
-            <p className={styles.blogExcerpt}>
-              A realistic breakdown of the hidden expectations companies have for junior developers today — from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.
-            </p>
-            <a
-              href="https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.blogLink}
-            >
-              Read the article
-            </a>
-          </div>
-
-          <a
-            href="https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.imageWrapper}
-          >
-            <img
-              src={require('../../assets/junior-devs-2025-cover.png')}
-              alt="What companies expect from junior developers in 2025"
-              className={styles.blogImage}
-            />
-          </a>
-        </div>
-
+        {/* Footer */}
         <footer className={styles.footer}>
           <div className={styles.footerInner}>
             <a
@@ -98,12 +94,14 @@ function Socials() {
                 className={styles.footerLogo}
               />
             </a>
+
             <div className={styles.footerText}>
               <span>© {new Date().getFullYear()} Rudi Carrillo.</span>
               <span>Available for remote opportunities.</span>
             </div>
           </div>
         </footer>
+
       </div>
     </section>
   );
