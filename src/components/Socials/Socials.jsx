@@ -34,7 +34,7 @@ function Socials() {
   return (
     <section id="socials" className={`section ${styles.socials}`}>
       <div className="section-inner">
-
+        {/* Header global */}
         <div className="section-header">
           <div>
             <h2 className="section-title">More insights</h2>
@@ -44,40 +44,42 @@ function Socials() {
           </div>
         </div>
 
-        {/* Render dinámico */}
-        {articles.map((article) => (
-          <div key={article.id} className={styles.blogCard}>
-            <div className={styles.blogText}>
-              <h3 className={styles.blogTitle}>{article.title}</h3>
-              <p className={styles.blogMeta}>
-                Written by Rudi Carrillo · {article.source}
-              </p>
-              <p className={styles.blogExcerpt}>{article.excerpt}</p>
-
+        {/* GRID PREMIUM */}
+        <div className={styles.blogGrid}>
+          {articles.map((article) => (
+            <article key={article.id} className={styles.blogCard}>
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.blogLink}
+                className={styles.imageWrapper}
               >
-                Read the article
+                <img
+                  src={article.cover}
+                  alt={article.title}
+                  className={styles.blogImage}
+                />
               </a>
-            </div>
 
-            <a
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.imageWrapper}
-            >
-              <img
-                src={article.cover}
-                alt={article.title}
-                className={styles.blogImage}
-              />
-            </a>
-          </div>
-        ))}
+              <div className={styles.blogText}>
+                <h3 className={styles.blogTitle}>{article.title}</h3>
+                <p className={styles.blogMeta}>
+                  Written by Rudi Carrillo · {article.source}
+                </p>
+                <p className={styles.blogExcerpt}>{article.excerpt}</p>
+
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.blogLink}
+                >
+                  Read the article
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
 
         {/* Footer */}
         <footer className={styles.footer}>
@@ -94,14 +96,12 @@ function Socials() {
                 className={styles.footerLogo}
               />
             </a>
-
             <div className={styles.footerText}>
               <span>© {new Date().getFullYear()} Rudi Carrillo.</span>
               <span>Available for remote opportunities.</span>
             </div>
           </div>
         </footer>
-
       </div>
     </section>
   );
