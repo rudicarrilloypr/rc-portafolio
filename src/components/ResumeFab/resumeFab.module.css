@@ -86,3 +86,11 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
   }
 }
+/* LIGHT MODE: FAB más suave, menos dramático */
+:global(.theme-light) .fab {
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
+}
+
+:global(.theme-light) .fab:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+}
