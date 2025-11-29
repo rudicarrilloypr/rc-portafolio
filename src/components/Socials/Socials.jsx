@@ -51,6 +51,39 @@ function Socials() {
           </a>
         </div>
 
+                <div className={styles.blogCard}>
+          <div className={styles.blogText}>
+            <h3 className={styles.blogTitle}>
+              What Companies Actually Expect from Junior Developers in 2025
+            </h3>
+            <p className={styles.blogMeta}>Written by Rudi Carrillo · Medium</p>
+            <p className={styles.blogExcerpt}>
+              A realistic breakdown of the hidden expectations companies have for junior developers today — from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.
+            </p>
+            <a
+              href="https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.blogLink}
+            >
+              Read the article
+            </a>
+          </div>
+
+          <a
+            href="https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.imageWrapper}
+          >
+            <img
+              src={require('../../assets/junior-devs-2025-cover.png')}
+              alt="What companies expect from junior developers in 2025"
+              className={styles.blogImage}
+            />
+          </a>
+        </div>
+
         <footer className={styles.footer}>
           <div className={styles.footerInner}>
             <a
