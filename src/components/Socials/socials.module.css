@@ -147,8 +147,11 @@
     padding: 14px;
   }
 
+  /* 🔧 FIX: que el wrapper se adapte a la imagen en móvil */
   .imageWrapper {
     max-width: 220px;
+    flex: 0 0 auto;   /* en vez de 240px de alto */
+    width: 100%;
   }
 
   .footerInner {
