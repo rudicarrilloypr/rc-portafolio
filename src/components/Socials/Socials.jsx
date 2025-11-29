@@ -7,11 +7,14 @@ function Socials() {
   return (
     <section id="socials" className={`section ${styles.socials}`}>
       <div className="section-inner">
-        <div className={styles.header}>
-          <h2 className="section-title">More insights</h2>
-          <p className={styles.subtitle}>
-            Articles and thoughts beyond the code.
-          </p>
+        {/* Usamos el mismo header global que en otras secciones */}
+        <div className="section-header">
+          <div>
+            <h2 className="section-title">More insights</h2>
+            <p className="section-subtitle">
+              Articles and thoughts beyond the code.
+            </p>
+          </div>
         </div>
 
         <div className={styles.blogCard}>

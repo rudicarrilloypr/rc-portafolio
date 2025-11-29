@@ -1,17 +1,6 @@
 .socials {
-  margin-top: 12px;
-}
-
-/* Header */
-.header {
-  text-align: left;
-  margin-bottom: 18px;
-}
-
-.subtitle {
-  margin: 4px 0 0;
-  font-size: 0.88rem;
-  color: var(--muted);
+  /* quitamos el margen extra para alinearla con el resto */
+  margin-top: 0;
 }
 
 /* Blog card */
@@ -107,7 +96,7 @@
   height: auto;
 }
 
-/* Footer */
+/* Footer dentro de la sección socials */
 .footer {
   border-top: 1px solid rgba(148, 163, 184, 0.25);
   padding-top: 14px;
@@ -147,11 +136,17 @@
     padding: 14px;
   }
 
-  /* 🔧 FIX: que el wrapper se adapte a la imagen en móvil */
+  /* Wrapper imagen más fluido en móvil */
   .imageWrapper {
     max-width: 220px;
-    flex: 0 0 auto;   /* en vez de 240px de alto */
+    flex: 0 0 auto;
     width: 100%;
+  }
+
+  /* acercamos un poquito el footer al contenido en mobile */
+  .footer {
+    padding-top: 10px;
+    margin-top: 2px;
   }
 
   .footerInner {
