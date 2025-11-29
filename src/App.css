@@ -16,7 +16,11 @@ body {
   scroll-behavior: smooth;
 }
 
+/* 🎨 THEME VARIABLES
+   Por defecto: Dark theme
+-------------------------------------------------- */
 :root {
+  /* Colores base */
   --bg: #050509;
   --bg-elevated: rgba(15, 15, 25, 0.9);
   --fg: #f4f4f5;
@@ -24,17 +28,144 @@ body {
   --accent: #a855f7;
   --accent-soft: rgba(168, 85, 247, 0.12);
   --border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Fondo general de la página */
+  --bg-page: radial-gradient(
+    circle at top,
+    #0f172a 0,
+    #020617 45%,
+    #020617 100%
+  );
+
+  /* Superficies y chips */
+  --surface-bg: linear-gradient(
+    to bottom right,
+    rgba(248, 250, 252, 0.04),
+    rgba(15, 23, 42, 0.9)
+  );
+  --chip-bg: rgba(15, 23, 42, 0.85);
+  --chip-border: rgba(255, 255, 255, 0.08);
+
   --radius-lg: 18px;
   --radius-full: 999px;
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Inter", "Segoe UI", sans-serif;
+
+  /* 🌌 Navbar */
+  --navbar-bg: radial-gradient(
+      circle at top left,
+      rgba(15, 23, 42, 0.9),
+      rgba(15, 23, 42, 0.88)
+    );
+  --navbar-border: rgba(148, 163, 184, 0.35);
+  --navbar-item-hover-bg: rgba(15, 23, 42, 0.85);
+  --navbar-item-active-bg: rgba(15, 23, 42, 0.95);
+  --navbar-item-active-border: rgba(248, 250, 252, 0.85);
+
+  /* 🔤 Colores de texto del navbar */
+  --navbar-link-color: var(--muted);
+  --navbar-link-active-color: var(--fg);
+
+  /* 🧱 Cards “fuertes” (contact terminal, socials, certs, etc.) */
+  --card-strong-bg: linear-gradient(
+      to bottom right,
+      rgba(15, 23, 42, 0.92),
+      rgba(15, 23, 42, 0.99)
+    );
+  --card-strong-border: rgba(148, 163, 184, 0.45);
+  --card-strong-shadow: 0 18px 42px rgba(15, 23, 42, 0.98);
+
+  /* Overlay de Apps */
+  --apps-overlay-bottom: rgba(3, 7, 18, 0.92);
+  --apps-overlay-top: rgba(15, 23, 42, 0.3);
+
+  /* FAB résumé */
+  --fab-bg: radial-gradient(
+      circle at top left,
+      rgba(236, 72, 153, 0.32),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(56, 189, 248, 0.26),
+      transparent 55%
+    );
+  --fab-border: rgba(248, 250, 252, 0.28);
+}
+
+/* ☀️ LIGHT THEME (se aplica cuando <html> tiene class="theme-light") */
+.theme-light {
+  --bg: #f9fafb;
+  --bg-elevated: #ffffff;
+  --fg: #0f172a;
+  --muted: #4b5563;
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+
+  --bg-page: radial-gradient(
+    circle at top,
+    #e5e7eb 0,
+    #f9fafb 45%,
+    #ffffff 100%
+  );
+
+  --surface-bg: #ffffff;
+  --chip-bg: #f3f4f6;
+  --chip-border: rgba(15, 23, 42, 0.08);
+
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+  /* Navbar en light */
+  --navbar-bg: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.96),
+      rgba(249, 250, 251, 0.94)
+    );
+  --navbar-border: rgba(148, 163, 184, 0.3);
+  --navbar-item-hover-bg: rgba(243, 244, 246, 0.98);
+
+  /* 🔘 Pill activo claro */
+  --navbar-item-active-bg: #e5e7eb;                 /* gris claro */
+  --navbar-item-active-border: rgba(148, 163, 184, 0.9);
+
+  /* Texto: links normales y activos */
+  --navbar-link-color: #4b5563;                    /* gris medio */
+  --navbar-link-active-color: #111827;             /* casi negro */
+
+  /* Cards fuertes en light */
+  --card-strong-bg: linear-gradient(
+      to bottom right,
+      #ffffff,
+      #e5e7eb
+    );
+  --card-strong-border: rgba(148, 163, 184, 0.5);
+  --card-strong-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+
+  /* Overlay apps más suave en light */
+  --apps-overlay-bottom: rgba(15, 23, 42, 0.72);
+  --apps-overlay-top: rgba(15, 23, 42, 0.25);
+
+  /* FAB résumé */
+  --fab-bg: radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(124, 58, 237, 0.25),
+      transparent 55%
+    );
+  --fab-border: rgba(15, 23, 42, 0.12);
 }
 
 body {
   font-family: var(--font-sans);
-  background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #020617 100%);
+  background: var(--bg-page);
   color: var(--fg);
+  transition: background 0.35s ease, color 0.25s ease;
 }
 
 /* CONTENEDOR ROOT DE LA APP */
@@ -50,7 +181,7 @@ body {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 96px 16px 72px; /* deja espacio para un navbar fijo */
+  padding: 96px 16px 72px;
 }
 
 @media (min-width: 768px) {
@@ -98,23 +229,21 @@ body {
 /* CONTENEDORES “CARD” GENÉRICOS */
 
 .surface {
-  background: linear-gradient(
-      to bottom right,
-      rgba(248, 250, 252, 0.04),
-      rgba(15, 23, 42, 0.9)
-    );
+  background: var(--surface-bg);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
   padding: 20px;
   backdrop-filter: blur(18px);
+  transition: background 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .surface--soft {
   background: rgba(15, 23, 42, 0.7);
 }
 
-/* GRID RESPONDIVO GENÉRICO (ideal para proyectos/apps) */
+/* GRID RESPONDIVO GENÉRICO */
 
 .grid-2 {
   display: grid;
@@ -138,11 +267,13 @@ body {
 
 .chip {
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
   padding: 4px 10px;
   font-size: 0.72rem;
   color: var(--muted);
+  transition: background 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 /* LINKS Y BOTONES BASE */
@@ -182,7 +313,11 @@ body {
       rgba(236, 72, 153, 0.28),
       transparent 55%
     ),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.2), transparent 55%);
+    radial-gradient(
+      circle at bottom right,
+      rgba(56, 189, 248, 0.2),
+      transparent 55%
+    );
   color: var(--fg);
   text-decoration: none;
   cursor: pointer;
@@ -203,7 +338,7 @@ body {
   font-size: 0.82rem;
 }
 
-/* OPCIONAL: FOOTER / SOCIALS */
+/* FOOTER GLOBAL (si lo usas) */
 .footer {
   width: 100%;
   max-width: 1080px;
@@ -225,4 +360,64 @@ body {
 
 .footer a:hover {
   color: var(--fg);
+}
+
+/* 🔘 THEME TOGGLE FLOATING BUTTON */
+
+.theme-toggle {
+  position: fixed;
+  top: 82px;
+  right: 18px;
+  z-index: 2100;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 999px;
+  padding: 4px 10px 4px 6px;
+  background: rgba(15, 23, 42, 0.92);
+  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(18px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+}
+
+.theme-toggle-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  opacity: 0.9;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 1);
+  border-color: rgba(248, 250, 252, 0.9);
+}
+
+/* En light mode aclaramos un poco el fondo del toggle */
+.theme-light .theme-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+}
+
+/* Mobile: que no estorbe tanto */
+@media (max-width: 640px) {
+  .theme-toggle {
+    top: 74px;
+    right: 12px;
+    padding: 4px 9px 4px 5px;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
 }

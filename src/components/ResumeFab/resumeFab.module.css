@@ -10,18 +10,11 @@
 
   padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: radial-gradient(
-      circle at top left,
-      rgba(59, 130, 246, 0.35),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(168, 85, 247, 0.3),
-      transparent 55%
-    );
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+
+  /* 🎨 ahora controlado por el tema */
+  border: 1px solid var(--fab-border);
+  background: var(--fab-bg);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(18px);
 
   color: var(--fg);
@@ -42,12 +35,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 23, 42, 0.9);
+
+  /* también pasa por el tema */
+  background: var(--bg-elevated);
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5);
 }
 
 .iconWrap svg {
   font-size: 0.9rem;
+  color: var(--fg); /* icono cambia con dark/light */
 }
 
 .label {

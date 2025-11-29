@@ -3,22 +3,47 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/RC-SD-logo(white).PNG';
+
+// Dos versiones del logo
+import logoDark from '../../assets/RC-SD-logo(white).PNG';
+import logoLight from '../../assets/RC-SD-logo(black).PNG';
+
 import styles from './navbar.module.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLightTheme, setIsLightTheme] = useState(false);
   const navRef = useRef(null);
 
+  // Cerrar menú al hacer click fuera
   const handleClickOutside = (event) => {
     if (navRef.current && !navRef.current.contains(event.target)) {
       setIsOpen(false);
     }
   };
 
+  // Listener para clicks fuera del navbar
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Detectar si el <html> tiene la clase theme-light
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const updateTheme = () => {
+      setIsLightTheme(root.classList.contains('theme-light'));
+    };
+
+    // Estado inicial
+    updateTheme();
+
+    // Observar cambios en la class del <html> (cuando toggles el tema)
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleLinkClick = () => {
@@ -31,7 +56,11 @@ function Navbar() {
 
         {/* BRAND ------------------------------------------------ */}
         <div className={styles.brand}>
-          <img src={logo} alt="Rudi Carrillo logo" className={styles.logo} />
+          <img
+            src={isLightTheme ? logoLight : logoDark}
+            alt="Rudi Carrillo logo"
+            className={styles.logo}
+          />
 
           <div className={styles.brandTextBlock}>
             <span className={styles.brandText}>Rudi Carrillo</span>

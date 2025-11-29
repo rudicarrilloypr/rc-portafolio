@@ -278,6 +278,110 @@
   background-image: url('https://res.cloudinary.com/dqjfp50zr/image/upload/v1701846969/Captura_de_pantalla_2023-12-06_a_la_s_1.15.24_ufmzn5.png');
 }
 
+/* Gradiente oscuro encima del screenshot para legibilidad */
+.slideGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top left,
+      rgba(148, 163, 184, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(
+      to top,
+      var(--apps-overlay-bottom),
+      var(--apps-overlay-top)
+    );
+  pointer-events: none;
+}
+
+/* Botón “More details” */
+.infoButton {
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.infoButton:hover {
+  background: var(--bg);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+/* Panel de detalles (overlay) */
+.detailPanel {
+  position: absolute;
+  inset: 0;
+  background: var(--card-strong-bg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+
+/* Botón cerrar (X) */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 999px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--card-strong-border);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.closeButton:hover {
+  background: var(--bg);
+  border-color: rgba(248, 250, 252, 0.8);
+}
+
+/* Botón play/pause flotante */
+.playPause {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  z-index: 4;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  width: 30px;
+  height: 30px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.playPause:hover {
+  background: var(--bg);
+  border-color: rgba(248, 250, 252, 0.8);
+  transform: translateY(-1px);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .slideOuter {
@@ -313,4 +417,27 @@
     height: 28px;
     font-size: 0.75rem;
   }
+}
+
+/* 🔒 Mantener colores tipo dark dentro de Apps, sin importar el tema */
+
+.apps .slideHeader h3,
+.apps .detailPanel h4,
+.apps .detailLinks a {
+  color: #f4f4f5; /* equivalente a var(--fg) en dark */
+}
+
+.apps .linksRow a,
+.apps .linksRow span,
+.apps .description,
+.apps .detailPanel p {
+  color: #a1a1aa; /* equivalente a var(--muted) en dark */
+}
+
+/* 💊 Chips dentro de Apps en light mode:
+   más transparentes para no tapar la imagen del proyecto */
+:global(.theme-light) .apps :global(.chip) {
+  background: rgba(15, 23, 42, 0.35);  /* pill oscuro semitransparente */
+  border-color: rgba(15, 23, 42, 0.5);
+  color: #f9fafb;
 }
