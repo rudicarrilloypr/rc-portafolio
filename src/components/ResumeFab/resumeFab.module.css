@@ -83,4 +83,10 @@
   .visible {
     transform: translateX(50%) translateY(0);
   }
+
+  /* Evitar que el hover "rompa" el centrado en mobile */
+  .fab:hover {
+    transform: translateX(50%) translateY(-2px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
+  }
 }
