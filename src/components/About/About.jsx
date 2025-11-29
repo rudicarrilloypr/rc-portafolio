@@ -10,7 +10,13 @@ import {
 } from 'react-icons/fa';
 import { PiFileCssDuotone, PiFileHtmlDuotone } from "react-icons/pi";
 import { DiRubyRough, DiRuby } from "react-icons/di";
-import { SiRubyonrails, SiRubygems, SiSelenium } from "react-icons/si";
+import {
+  SiRubyonrails,
+  SiRubygems,
+  SiSelenium,
+  SiNextdotjs,
+  SiAngular,
+} from "react-icons/si";
 import { BiLogoRedux } from "react-icons/bi";
 import { GiCapybara } from "react-icons/gi";
 import { FaRegFileCode } from "react-icons/fa6";
@@ -68,6 +74,14 @@ function About() {
                 <li>
                   <span>React</span>
                   <FaReact />
+                </li>
+                <li>
+                  <span>Next.js</span>
+                  <SiNextdotjs />
+                </li>
+                <li>
+                  <span>Angular</span>
+                  <SiAngular />
                 </li>
                 <li>
                   <span>Ruby on Rails</span>
