@@ -31,8 +31,11 @@ function Portfolio() {
 
           <div className="chip-row">
             <span className="chip">React · Ruby on Rails</span>
+            <span className="chip">Node.js · REST APIs</span>
+            <span className="chip">PostgreSQL · SQL</span>
             <span className="chip">Remote-ready</span>
             <span className="chip">Mexico (UTC−6)</span>
+            <span className="chip">Bilingual: EN · ES</span>
           </div>
 
           <div className={styles.socialLinks}>

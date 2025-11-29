@@ -61,7 +61,7 @@
 
 /* ---- CHIPS (override global .chip-row para que se vea bien aquí) ---- */
 
-/* Desktop / base: fila centrada con wrap si hace falta */
+/* Base / desktop: fila centrada, con wrap */
 :global(.chip-row) {
   display: flex;
   flex-wrap: wrap;
@@ -70,7 +70,7 @@
   margin-top: 14px;
 }
 
-/* Ajustamos las chip para que el contenido quede bien centrado */
+/* Aseguramos centrado de contenido dentro de cada chip */
 :global(.chip-row .chip) {
   display: inline-flex;
   align-items: center;
@@ -115,16 +115,16 @@
     font-size: 0.84rem;
   }
 
-  /* En mobile: las 3 chips apiladas, mismo ancho */
+  /* Mobile: grid “fluido” de chips en 2 columnas aprox */
   :global(.chip-row) {
-    max-width: 320px;
+    max-width: 360px;
     margin-inline: auto;
-    flex-direction: column;
-    align-items: stretch;
+    justify-content: center;
   }
 
   :global(.chip-row .chip) {
-    width: 100%;
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
     justify-content: center;
   }
 }
