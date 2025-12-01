@@ -50,19 +50,22 @@ function App() {
       <Navbar />
 
       {/* Toggle flotante para Dark / Light */}
-      <button
-        type="button"
-        className={`theme-toggle ${theme === 'light' ? 'theme-toggle--light' : ''}`}
-        onClick={toggleTheme}
-        aria-label={nextLabel}
-      >
-        <span className="theme-toggle-icon" aria-hidden="true">
-          {theme === 'dark' ? '☀️' : '🌙'}
-        </span>
-        <span className="theme-toggle-label">
-          {theme === 'dark' ? 'Light' : 'Dark'}
-        </span>
-      </button>
+ <button
+  type="button"
+  className={`theme-toggle ${theme === 'light' ? 'theme-toggle--light' : ''}`}
+  onClick={toggleTheme}
+  aria-label={nextLabel}
+>
+  <span className="theme-toggle-track" aria-hidden="true">
+    <span className="theme-toggle-thumb">
+      {theme === 'dark' ? '🌙' : '☀️'}
+    </span>
+  </span>
+  <span className="theme-toggle-label">
+    {theme === 'dark' ? 'Dark' : 'Light'}
+  </span>
+</button>
+
 
       <main className="App-main">
         <Portfolio />
