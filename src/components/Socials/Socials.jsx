@@ -23,7 +23,7 @@ const articles = [
     title: 'What Companies Actually Expect from Junior Developers in 2025',
     excerpt:
       'A realistic breakdown of the hidden expectations companies have for junior developers today — from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.',
-    url: 'https://medium.com/@rudicarrilloypr/what-companies-actually-expect-from-junior-developers-in-2025-XXXXX',
+    url: 'https://medium.com/@rudicarrilloypr/what-companies-really-expect-from-junior-developers-in-2025-and-why-most-applicants-miss-the-mark-e6291bb5f8af',
     cover: juniorDevsCover,
     source: 'Medium',
     date: '2025-11-29',
