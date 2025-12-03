@@ -128,3 +128,9 @@
     justify-content: center;
   }
 }
+
+/* 🌤️ Sombras más suaves en LIGHT MODE */
+:global(.theme-light) .profileImage {
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.30);
+  border-color: rgba(15, 23, 42, 0.06);
+}
