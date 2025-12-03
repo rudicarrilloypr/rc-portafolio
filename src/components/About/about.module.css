@@ -1,4 +1,3 @@
-
 /* STACK / MY STACK */
 .stackSection {
   margin-bottom: 40px;
@@ -133,7 +132,11 @@
       rgba(59, 130, 246, 0.35),
       transparent 55%
     ),
-    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.28), transparent 55%);
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.28),
+      transparent 55%
+    );
   color: var(--fg);
   text-decoration: none;
   font-size: 0.82rem;
@@ -198,7 +201,6 @@
   transform: translateY(-1px);
 }
 
-
 .certGrid a svg {
   font-size: 1rem;
 }
@@ -221,4 +223,15 @@
     width: 100%;
     justify-content: flex-start;
   }
+}
+
+/* 🌤️ Sombras más suaves en LIGHT MODE */
+:global(.theme-light) .profileImageWrapper {
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.25);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+:global(.theme-light) .resumeButton {
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.21);
+  border-color: rgba(15, 23, 42, 0.16);
 }

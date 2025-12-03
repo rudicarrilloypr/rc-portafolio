@@ -32,7 +32,6 @@
     border-color 0.18s ease;
 }
 
-
 .blogCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
@@ -163,33 +162,11 @@
   }
 }
 
-/* 🌗 Dark/Light mode inteligente usando prefers-color-scheme */
-/*@media (prefers-color-scheme: light) {
-  .blogCard {
-    background: linear-gradient(
-      to bottom right,
-      rgba(248, 250, 252, 0.98),
-      rgba(226, 232, 240, 0.98)
-    );
-    border-color: rgba(203, 213, 225, 0.9);
-    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
-  }
+/* 🌤️ Sombras más suaves en LIGHT MODE */
+:global(.theme-light) .imageWrapper {
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+}
 
-  .blogLink {
-    background: rgba(248, 250, 252, 0.96);
-    border-color: rgba(148, 163, 184, 0.8);
-  }
-
-  .blogLink:hover {
-    background: #e5e7eb;
-    border-color: #0f172a;
-  }
-
-  .footer {
-    border-top-color: rgba(148, 163, 184, 0.35);
-  }
-
-  .footerLogo {
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.25);
-  }
-} */
+:global(.theme-light) .footerLogo {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+}
