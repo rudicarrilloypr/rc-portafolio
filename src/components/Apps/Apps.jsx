@@ -16,6 +16,23 @@ const projects = [
     builtWith: ["JavaScript", "WordPress", "CSS", "Node.js"],
     className: "barradas",
   },
+{
+  name: "CEFIX Chatbot",
+  url: "https://github.com/rudicarrilloypr/fisio-clinic-app",
+  demo: "https://cefix.netlify.app/",
+  description:
+    "AI-assisted physiotherapy clinic chatbot that guides users through a rule-based triage to distinguish urgency vs appointment needs, recommends the appropriate branch based on body zone and availability, and allows booking appointments without login. Designed as an MVP focused on speed, clarity, and conversion.",
+  builtWith: [
+    "Next.js 14 (App Router)",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "API Routes",
+    "PWA",
+    "Node.js"
+  ],
+  className: "cefixChatbot",
+},
   {
     name: "Fortnite New Cosmetics",
     url: "https://github.com/rudicarrilloypr/fortnite-api",
