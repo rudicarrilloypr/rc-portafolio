@@ -29,7 +29,7 @@
   margin: 0;
   font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .skillIcon {
@@ -117,7 +117,7 @@
   color: var(--muted);
 }
 
-/* Botón de CV */
+/* Resume button */
 .resumeButton {
   margin-top: 16px;
   display: inline-flex;
@@ -170,7 +170,7 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .certGrid {
@@ -225,7 +225,7 @@
   }
 }
 
-/* 🌤️ Sombras más suaves en LIGHT MODE */
+/* Lighter shadows in light mode */
 :global(.theme-light) .profileImageWrapper {
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.25);
   border-color: rgba(15, 23, 42, 0.08);

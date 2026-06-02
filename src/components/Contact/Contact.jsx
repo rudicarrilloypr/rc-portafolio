@@ -97,12 +97,12 @@ function Contact() {
 
             <div className={styles.metaDetail}>
               <span className={styles.metaLabel}>Based in</span>
-              <span className={styles.metaValue}>Mexico · UTC−6</span>
+              <span className={styles.metaValue}>Mexico / UTC-6</span>
             </div>
             <div className={styles.metaDetail}>
               <span className={styles.metaLabel}>Preferred work</span>
               <span className={styles.metaValue}>
-                Remote · Product teams · Long-term collaboration
+                Remote / Product teams / Long-term collaboration
               </span>
             </div>
           </div>
@@ -114,7 +114,7 @@ function Contact() {
               <span className={`${styles.dot} ${styles.yellow}`} />
               <span className={`${styles.dot} ${styles.green}`} />
               <span className={styles.terminalTitle}>
-                contact@rudi — new session
+                contact@rudi - new session
               </span>
             </div>
 
@@ -186,7 +186,7 @@ function Contact() {
                 className={styles.submitButton}
                 disabled={isLoading}
               >
-                {isLoading ? 'Sending…' : 'Send message'}
+                {isLoading ? 'Sending...' : 'Send message'}
               </button>
 
               {status && (

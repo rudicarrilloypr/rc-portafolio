@@ -42,12 +42,12 @@
   flex: 1;
 }
 
-/* Título y texto */
+/* Title and text */
 .blogTitle {
   margin: 4px 0 4px;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .blogMeta {
@@ -106,7 +106,7 @@
   height: auto;
 }
 
-/* Footer dentro de la sección socials */
+/* Footer inside socials */
 .footer {
   border-top: 1px solid rgba(148, 163, 184, 0.25);
   padding-top: 14px;
@@ -162,7 +162,7 @@
   }
 }
 
-/* 🌤️ Sombras más suaves en LIGHT MODE */
+/* Lighter shadows in light mode */
 :global(.theme-light) .imageWrapper {
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
 }

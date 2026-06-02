@@ -1,7 +1,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-/* RESET BÁSICO Y CONFIG GLOBAL */
 *,
 *::before,
 *::after {
@@ -16,217 +15,165 @@ body {
   scroll-behavior: smooth;
 }
 
-/* 🎨 THEME VARIABLES
-   Por defecto: Dark theme
--------------------------------------------------- */
 :root {
-  /* Colores base */
-  --bg: #050509;
-  --bg-elevated: rgba(15, 15, 25, 0.9);
-  --fg: #f4f4f5;
-  --muted: #a1a1aa;
-  --accent: #a855f7;
-  --accent-soft: rgba(168, 85, 247, 0.12);
-  --border-subtle: rgba(255, 255, 255, 0.06);
-
-  /* Fondo general de la página */
-  --bg-page: radial-gradient(
-    circle at top,
-    #0f172a 0,
-    #020617 45%,
-    #020617 100%
-  );
-
-  /* Superficies y chips */
+  --bg: #020405;
+  --bg-elevated: rgba(6, 12, 16, 0.92);
+  --fg: #f7fbff;
+  --muted: #94a3b8;
+  --accent: #46f0ff;
+  --accent-strong: #a3e635;
+  --accent-warm: #fbbf24;
+  --accent-soft: rgba(70, 240, 255, 0.12);
+  --border-subtle: rgba(148, 163, 184, 0.16);
+  --bg-page: linear-gradient(180deg, #020405 0%, #071015 44%, #080b10 100%);
   --surface-bg: linear-gradient(
-    to bottom right,
-    rgba(248, 250, 252, 0.04),
-    rgba(15, 23, 42, 0.9)
+    145deg,
+    rgba(10, 18, 24, 0.88),
+    rgba(4, 8, 12, 0.96)
   );
-  --chip-bg: rgba(15, 23, 42, 0.85);
-  --chip-border: rgba(255, 255, 255, 0.08);
-
-  --radius-lg: 18px;
+  --chip-bg: rgba(8, 18, 23, 0.72);
+  --chip-border: rgba(70, 240, 255, 0.18);
+  --radius-lg: 8px;
   --radius-full: 999px;
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.46);
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Inter", "Segoe UI", sans-serif;
-
-  /* 🌌 Navbar */
-  --navbar-bg: radial-gradient(
-      circle at top left,
-      rgba(15, 23, 42, 0.9),
-      rgba(15, 23, 42, 0.88)
-    );
-  --navbar-border: rgba(148, 163, 184, 0.35);
-  --navbar-item-hover-bg: rgba(15, 23, 42, 0.85);
-  --navbar-item-active-bg: rgba(15, 23, 42, 0.95);
-  --navbar-item-active-border: rgba(248, 250, 252, 0.85);
-
-  /* 🔤 Colores de texto del navbar */
-  --navbar-link-color: var(--muted);
-  --navbar-link-active-color: var(--fg);
-
-  /* 🧱 Cards “fuertes” (contact terminal, socials, certs, etc.) */
+  --navbar-bg: rgba(2, 4, 5, 0.76);
+  --navbar-border: rgba(70, 240, 255, 0.18);
+  --navbar-item-hover-bg: rgba(70, 240, 255, 0.08);
+  --navbar-item-active-bg: rgba(163, 230, 53, 0.14);
+  --navbar-item-active-border: rgba(163, 230, 53, 0.54);
+  --navbar-link-color: rgba(226, 242, 245, 0.72);
+  --navbar-link-active-color: #f7fbff;
   --card-strong-bg: linear-gradient(
-      to bottom right,
-      rgba(15, 23, 42, 0.92),
-      rgba(15, 23, 42, 0.99)
-    );
-  --card-strong-border: rgba(148, 163, 184, 0.45);
-  --card-strong-shadow: 0 18px 42px rgba(15, 23, 42, 0.98);
-
-  /* Overlay de Apps */
-  --apps-overlay-bottom: rgba(3, 7, 18, 0.92);
-  --apps-overlay-top: rgba(15, 23, 42, 0.3);
-
-  /* FAB résumé */
-  --fab-bg: radial-gradient(
-      circle at top left,
-      rgba(236, 72, 153, 0.32),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(56, 189, 248, 0.26),
-      transparent 55%
-    );
-  --fab-border: rgba(248, 250, 252, 0.28);
+    145deg,
+    rgba(7, 15, 20, 0.96),
+    rgba(4, 8, 12, 0.98)
+  );
+  --card-strong-border: rgba(70, 240, 255, 0.2);
+  --card-strong-shadow: 0 24px 70px rgba(0, 0, 0, 0.44);
+  --apps-overlay-bottom: rgba(2, 4, 5, 0.92);
+  --apps-overlay-top: rgba(2, 4, 5, 0.18);
+  --fab-bg: linear-gradient(
+    135deg,
+    rgba(70, 240, 255, 0.2),
+    rgba(163, 230, 53, 0.16),
+    rgba(251, 191, 36, 0.18)
+  );
+  --fab-border: rgba(70, 240, 255, 0.28);
 }
 
-/* ☀️ LIGHT THEME (se aplica cuando <html> tiene class="theme-light") */
 .theme-light {
-  --bg: #f9fafb;
-  --bg-elevated: #ffffff;
+  --bg: #f6f8fb;
+  --bg-elevated: rgba(255, 255, 255, 0.92);
   --fg: #0f172a;
-  --muted: #4b5563;
-  --accent: #7c3aed;
-  --accent-soft: rgba(124, 58, 237, 0.12);
-  --border-subtle: rgba(15, 23, 42, 0.08);
-
-  --bg-page: radial-gradient(
-    circle at top,
-    #e5e7eb 0,
-    #f9fafb 45%,
-    #ffffff 100%
+  --muted: #475569;
+  --accent: #0891b2;
+  --accent-strong: #65a30d;
+  --accent-warm: #b45309;
+  --accent-soft: rgba(8, 145, 178, 0.12);
+  --border-subtle: rgba(15, 23, 42, 0.1);
+  --bg-page: linear-gradient(180deg, #f6f8fb 0%, #eaf3f5 50%, #ffffff 100%);
+  --surface-bg: linear-gradient(145deg, #ffffff, #edf5f6);
+  --chip-bg: rgba(255, 255, 255, 0.9);
+  --chip-border: rgba(15, 23, 42, 0.12);
+  --shadow-soft: 0 24px 70px rgba(15, 23, 42, 0.1);
+  --navbar-bg: rgba(255, 255, 255, 0.82);
+  --navbar-border: rgba(15, 23, 42, 0.1);
+  --navbar-item-hover-bg: rgba(8, 145, 178, 0.08);
+  --navbar-item-active-bg: rgba(101, 163, 13, 0.12);
+  --navbar-item-active-border: rgba(101, 163, 13, 0.36);
+  --navbar-link-color: #475569;
+  --navbar-link-active-color: #0f172a;
+  --card-strong-bg: linear-gradient(145deg, #ffffff, #eef5f7);
+  --card-strong-border: rgba(15, 23, 42, 0.12);
+  --card-strong-shadow: 0 18px 42px rgba(15, 23, 42, 0.1);
+  --apps-overlay-bottom: rgba(2, 4, 5, 0.82);
+  --apps-overlay-top: rgba(2, 4, 5, 0.18);
+  --fab-bg: linear-gradient(
+    135deg,
+    rgba(8, 145, 178, 0.16),
+    rgba(101, 163, 13, 0.12),
+    rgba(180, 83, 9, 0.12)
   );
-
-  --surface-bg: #ffffff;
-  --chip-bg: #f3f4f6;
-  --chip-border: rgba(15, 23, 42, 0.08);
-
-  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
-
-  /* Navbar en light */
-  --navbar-bg: radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.96),
-      rgba(249, 250, 251, 0.94)
-    );
-  --navbar-border: rgba(148, 163, 184, 0.3);
-  --navbar-item-hover-bg: rgba(243, 244, 246, 0.98);
-
-  /* 🔘 Pill activo claro */
-  --navbar-item-active-bg: #e5e7eb;                 /* gris claro */
-  --navbar-item-active-border: rgba(148, 163, 184, 0.9);
-
-  /* Texto: links normales y activos */
-  --navbar-link-color: #4b5563;                    /* gris medio */
-  --navbar-link-active-color: #111827;             /* casi negro */
-
-  /* Cards fuertes en light */
-  --card-strong-bg: linear-gradient(
-      to bottom right,
-      #ffffff,
-      #e5e7eb
-    );
-  --card-strong-border: rgba(148, 163, 184, 0.5);
-  --card-strong-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
-
-  /* Overlay apps más suave en light */
-  --apps-overlay-bottom: rgba(15, 23, 42, 0.72);
-  --apps-overlay-top: rgba(15, 23, 42, 0.25);
-
-  /* FAB résumé */
-  --fab-bg: radial-gradient(
-      circle at top left,
-      rgba(59, 130, 246, 0.25),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(124, 58, 237, 0.25),
-      transparent 55%
-    );
-  --fab-border: rgba(15, 23, 42, 0.12);
+  --fab-border: rgba(15, 23, 42, 0.14);
 }
 
 body {
   font-family: var(--font-sans);
   background: var(--bg-page);
   color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background 0.35s ease, color 0.25s ease;
 }
 
-/* CONTENEDOR ROOT DE LA APP */
 .App {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  background: var(--bg-page);
 }
 
-/* Layout de contenido principal */
+.App::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(70, 240, 255, 0.34) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 191, 36, 0.18) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
 .App-main {
+  position: relative;
+  z-index: 1;
   flex: 1;
   width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 96px 16px 72px;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 72px;
 }
-
-@media (min-width: 768px) {
-  .App-main {
-    padding: 112px 24px 80px;
-  }
-}
-
-/* ESTILO BASE DE SECCIONES */
 
 .section {
-  padding: 56px 0;
+  padding: 72px 16px;
 }
 
 .section:first-of-type {
-  padding-top: 24px;
+  padding-top: 0;
 }
 
 .section-inner {
+  width: min(1120px, 100%);
   margin: 0 auto;
-  max-width: 960px;
 }
 
 .section-header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 24px;
 }
 
 .section-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
 .section-subtitle {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   color: var(--muted);
 }
-
-/* CONTENEDORES “CARD” GENÉRICOS */
 
 .surface {
   background: var(--surface-bg);
@@ -235,16 +182,12 @@ body {
   box-shadow: var(--shadow-soft);
   padding: 20px;
   backdrop-filter: blur(18px);
-  transition: background 0.3s ease, box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .surface--soft {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(6, 12, 16, 0.68);
 }
-
-
-/* GRID RESPONDIVO GENÉRICO */
 
 .grid-2 {
   display: grid;
@@ -257,12 +200,10 @@ body {
   }
 }
 
-/* TAGS / CHIPS / BADGES */
-
 .chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-top: 8px;
 }
 
@@ -270,14 +211,11 @@ body {
   border-radius: var(--radius-full);
   border: 1px solid var(--chip-border);
   background: var(--chip-bg);
-  padding: 4px 10px;
+  padding: 5px 10px;
   font-size: 0.72rem;
   color: var(--muted);
-  transition: background 0.25s ease, border-color 0.25s ease,
-    color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
-
-/* LINKS Y BOTONES BASE */
 
 .link-ghost {
   font-size: 0.78rem;
@@ -295,8 +233,8 @@ body {
 
 .link-ghost:hover {
   color: var(--fg);
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(70, 240, 255, 0.24);
+  background: rgba(70, 240, 255, 0.08);
   transform: translateY(-1px);
 }
 
@@ -308,41 +246,27 @@ body {
   padding: 9px 18px;
   font-size: 0.82rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: radial-gradient(
-      circle at top left,
-      rgba(236, 72, 153, 0.28),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(56, 189, 248, 0.2),
-      transparent 55%
-    );
-  color: var(--fg);
+  border: 1px solid rgba(163, 230, 53, 0.5);
+  background: linear-gradient(90deg, rgba(163, 230, 53, 0.9), rgba(70, 240, 255, 0.86));
+  color: #031011;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    background-position 0.18s ease;
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.75);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
 }
 
 .button-primary:hover {
   transform: translateY(-1.5px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
 }
-
-/* TEXTO PEQUEÑO / DETALLES */
 
 .text-muted {
   color: var(--muted);
   font-size: 0.82rem;
 }
 
-/* FOOTER GLOBAL (si lo usas) */
 .footer {
-  width: 100%;
-  max-width: 1080px;
+  width: min(1120px, 100%);
   margin: 0 auto;
   padding: 18px 16px 32px;
   display: flex;
@@ -351,7 +275,7 @@ body {
   gap: 12px;
   font-size: 0.75rem;
   color: var(--muted);
-  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .footer a {
@@ -363,95 +287,86 @@ body {
   color: var(--fg);
 }
 
-/* 🔘 THEME TOGGLE FLOATING BUTTON */
-
-/* 🔘 THEME TOGGLE FLOATING BUTTON – iOS style */
-
 .theme-toggle {
   position: fixed;
   top: 82px;
   right: 18px;
   z-index: 2100;
-
   border: none;
   background: transparent;
   padding: 0;
-
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   cursor: pointer;
   font-size: 0.78rem;
 }
 
-/* Track del switch */
 .theme-toggle-track {
   width: 46px;
   height: 24px;
   border-radius: 999px;
   padding: 3px;
-
   display: flex;
   align-items: center;
-
-  background: rgba(15, 23, 42, 0.85);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.5);
+  background: rgba(6, 12, 16, 0.9);
+  border: 1px solid rgba(70, 240, 255, 0.22);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   transition: background-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-/* Thumb / bolita */
 .theme-toggle-thumb {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 999px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: transparent;   /* 🔥 SIN FONDO */
-  color: #facc15;            /* 🔆 amarillo suave */
-  font-size: 1rem;
-
+  color: #46f0ff;
+  font-size: 0.8rem;
   transform: translateX(0);
   transition: transform 0.22s ease, color 0.22s ease;
-  box-shadow: none;          /* 🔥 SIN SHADOW REDONDO */
 }
 
-
-/* Label a la derecha */
 .theme-toggle-label {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   font-size: 0.68rem;
   opacity: 0.9;
   color: var(--muted);
 }
 
-/* Estado LIGHT – thumb a la derecha, colores invertidos */
 .theme-toggle--light .theme-toggle-track {
-  background: rgba(209, 213, 219, 0.9);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
 }
 
 .theme-toggle--light .theme-toggle-thumb {
   transform: translateX(20px);
-  background: transparent;     /* 🔥 sin fondo */
-  color: #eab308;              /* 🟡 sol dorado */
-  box-shadow: none;            /* sin sombra */
+  color: #b45309;
 }
 
-
-/* Hover (solo desktop) */
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle:hover .theme-toggle-track {
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.6);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.42);
   }
 }
 
-/* Mobile: más compacto y centrado visualmente */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
+  .section {
+    padding: 56px 16px;
+  }
+
+  .section-header {
+    display: block;
+  }
+
+  .section-subtitle {
+    display: block;
+    margin-top: 8px;
+  }
+
   .theme-toggle {
     top: 74px;
     right: 12px;
@@ -460,23 +375,18 @@ body {
   .theme-toggle-track {
     width: 42px;
     height: 22px;
-    padding: 3px;
   }
 
-.theme-toggle-thumb {
-  width: 18px;
-  height: 18px;
-  font-size: 0.9rem;
-  background: transparent;
-  box-shadow: none;
-}
-
+  .theme-toggle-thumb {
+    width: 16px;
+    height: 16px;
+    font-size: 0.74rem;
+  }
 
   .theme-toggle--light .theme-toggle-thumb {
     transform: translateX(18px);
   }
 
-  /* Ocultamos label para que el switch quede bien centrado */
   .theme-toggle-label {
     display: none;
   }
