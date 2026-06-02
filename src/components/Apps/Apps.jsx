@@ -20,7 +20,7 @@ const projects = [
     image: "https://res.cloudinary.com/dqjfp50zr/image/upload/v1763483080/Captura_de_pantalla_2025-11-18_a_la_s_10.24.10_a.m._vlyj2w.png",
     description:
       "Website that allows customers to browse product catalogs, view specifications, request quotes and make selected online purchases.",
-    builtWith: ["JavaScript", "WordPress", "CSS", "Node.js"],
+    builtWith: ["JavaScript", "Liquid", "CSS", "Node.js"],
     className: "barradas",
   },
   {
