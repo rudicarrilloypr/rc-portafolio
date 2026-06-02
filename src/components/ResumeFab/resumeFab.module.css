@@ -11,7 +11,6 @@
   padding: 8px 14px;
   border-radius: 999px;
 
-  /* 🎨 ahora controlado por el tema */
   border: 1px solid var(--fab-border);
   background: var(--fab-bg);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
@@ -36,7 +35,6 @@
   align-items: center;
   justify-content: center;
 
-  /* también pasa por el tema */
   background: var(--bg-elevated);
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5);
 }
@@ -71,22 +69,34 @@
 /* Mobile: centrado abajo para que no estorbe en el borde derecho */
 @media (max-width: 640px) {
   .fab {
-    right: 50%;
+    right: 16px;
     bottom: 18px;
-    transform: translateX(50%) translateY(10px);
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+    transform: translateY(10px);
   }
 
   .visible {
-    transform: translateX(50%) translateY(0);
+    transform: translateY(0);
   }
 
-  /* Evitar que el hover "rompa" el centrado en mobile */
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
   .fab:hover {
-    transform: translateX(50%) translateY(-2px);
+    transform: translateY(-2px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
   }
 }
-/* LIGHT MODE: FAB más suave, menos dramático */
+/* Light mode */
 :global(.theme-light) .fab {
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
 }

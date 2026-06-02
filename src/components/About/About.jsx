@@ -156,18 +156,18 @@ function About() {
               both users and developers.
             </p>
             <p className={styles.aboutBody}>
-              I’m currently based in Mexico and open to remote roles where I can
+              I&apos;m currently based in Mexico and open to remote roles where I can
               contribute to product teams, help refine architecture and own
               features from idea to production.
             </p>
 
             <a
-              href="https://drive.google.com/file/d/1H2azqW8VdWQ0gR_aEeNlA49dAVQD3tcz/view?usp=sharing"
+              href="https://drive.google.com/file/d/11a6KbTfssd-YEaHvd0nnURNM4vwidcok/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.resumeButton}
             >
-              Get my résumé
+              Get my resume
             </a>
           </div>
         </div>

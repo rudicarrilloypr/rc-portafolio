@@ -4,14 +4,13 @@ import { FaDownload } from 'react-icons/fa';
 import styles from './resumeFab.module.css';
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1H2azqW8VdWQ0gR_aEeNlA49dAVQD3tcz/view?usp=sharing';
+  'https://drive.google.com/file/d/11a6KbTfssd-YEaHvd0nnURNM4vwidcok/view?usp=sharing';
 
 function ResumeFab() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Muestra el botón después de scrollear un poco
       const y = window.scrollY || window.pageYOffset;
       setVisible(y > 280);
     };
@@ -31,12 +30,12 @@ function ResumeFab() {
       type="button"
       onClick={handleClick}
       className={`${styles.fab} ${visible ? styles.visible : styles.hidden}`}
-      aria-label="Open résumé PDF"
+      aria-label="Open resume PDF"
     >
       <span className={styles.iconWrap}>
         <FaDownload />
       </span>
-      <span className={styles.label}>Download my Résumé (PDF)</span>
+      <span className={styles.label}>Download my resume (PDF)</span>
     </button>
   );
 }

@@ -1,41 +1,85 @@
-// Portfolio.jsx
 import React from 'react';
-import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { MdVerified } from "react-icons/md";
-import profileImage from '../../assets/rc-white.PNG';
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+import {
+  FaArrowRight,
+  FaGithub,
+  FaLinkedin,
+} from 'react-icons/fa';
+import HeroScene from '../HeroScene/HeroScene';
 import styles from './portfolio.module.css';
 
 function Portfolio() {
   return (
-    <section id="portfolio" className={`section ${styles.portfolio}`}>
-      <div className="section-inner">
-        <div className={`surface ${styles.card}`}>
-          <img
-            src={profileImage}
-            alt="Rudi Carrillo"
-            className={styles.profileImage}
-          />
+    <section id="portfolio" className={styles.hero}>
+      <HeroScene />
+      <div className={styles.gridOverlay} aria-hidden="true" />
+      <div className={styles.scanline} aria-hidden="true" />
 
-          <div className={styles.heading}>
-            <h1 className={styles.name}>Rudi Carrillo</h1>
-            <MdVerified className={styles.verifiedIcon} />
+      <div className={styles.inner}>
+        <motion.div
+          className={styles.copy}
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <div className={styles.signal}>
+            <span aria-hidden="true" />
+            Full-stack software developer / Available remotely
           </div>
 
-          <p className={styles.role}>Full-Stack Software Developer</p>
-
-          <p className={styles.bio}>
-            I create streamlined, maintainable solutions across front-end and
-            back-end, with a strong focus on clean interfaces, performance and
-            a smooth developer experience.
+          <h1 className={styles.name}>Rudi Carrillo</h1>
+          <p className={styles.role}>
+            I create modern web experiences that combine clean code, thoughtful
+            design, and real functionality. My work lives at the intersection
+            of technology and creativity, where ideas become interactive,
+            responsive, and user-friendly digital products.
           </p>
 
-          <div className="chip-row">
-            <span className="chip">React · Ruby on Rails</span>
-            <span className="chip">Node.js · REST APIs</span>
-            <span className="chip">PostgreSQL · SQL</span>
-            <span className="chip">Remote-ready</span>
-            <span className="chip">Mexico (UTC−6)</span>
-            <span className="chip">Bilingual: EN · ES</span>
+          <div className={styles.actions}>
+            <Link
+              to="apps"
+              smooth
+              offset={-72}
+              duration={500}
+              className={styles.primaryAction}
+            >
+              View projects
+              <FaArrowRight aria-hidden="true" />
+            </Link>
+            <Link
+              to="contact"
+              smooth
+              offset={-72}
+              duration={500}
+              className={styles.secondaryAction}
+            >
+              Start a project
+            </Link>
+          </div>
+
+          <div className={styles.techRail} aria-label="Core technology stack">
+            <span>React</span>
+            <span>Next.js</span>
+            <span>Ruby on Rails</span>
+            <span>Node.js</span>
+            <span>PostgreSQL</span>
+            <span>AI-assisted UX</span>
+          </div>
+
+          <div className={styles.metrics} aria-label="Profile highlights">
+            <div>
+              <strong>EN/ES</strong>
+              <span>Bilingual collaboration</span>
+            </div>
+            <div>
+              <strong>UTC-6</strong>
+              <span>Mexico based</span>
+            </div>
+            <div>
+              <strong>Full-stack</strong>
+              <span>Product ownership</span>
+            </div>
           </div>
 
           <div className={styles.socialLinks}>
@@ -55,25 +99,33 @@ function Portfolio() {
             >
               <FaGithub className={styles.icon} />
             </a>
-            <a
-              href="https://twitter.com/__rudicarrillo"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter className={styles.icon} />
-            </a>
-            <a
-              href="https://www.instagram.com/_rudicarrillo/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram className={styles.icon} />
-            </a>
           </div>
-        </div>
+        </motion.div>
+
+        <motion.aside
+          className={styles.telemetry}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.24, duration: 0.7, ease: 'easeOut' }}
+          aria-label="Developer profile summary"
+        >
+          <div className={styles.telemetryHeader}>
+            <span>RC-SD/2026</span>
+            <span>ONLINE</span>
+          </div>
+          <div className={styles.telemetryBody}>
+            <p>Interface systems</p>
+            <strong>Clean architecture, fast delivery, modern UX.</strong>
+          </div>
+          <div className={styles.telemetryBars}>
+            <span style={{ '--level': '88%' }} />
+            <span style={{ '--level': '76%' }} />
+            <span style={{ '--level': '94%' }} />
+          </div>
+        </motion.aside>
       </div>
+
+      <div className={styles.scrollCue}>Featured work below</div>
     </section>
   );
 }

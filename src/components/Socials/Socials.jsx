@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './socials.module.css';
 
-// Imports de imágenes
+// Image imports
 import aiCover from '../../assets/rc-ai-cover.png';
 import juniorDevsCover from '../../assets/junior-devs-2025-cover.png';
 import logo from '../../assets/rc-sd-logo.PNG';
 
-// Array de artículos
+// Article data
 const articles = [
   {
     id: 'ai-impact',
     title: 'The impact of AI on software development',
     excerpt:
-      'A look at how AI tooling is changing the way developers design, ship and maintain software — and why the human side still matters.',
+      'A look at how AI tooling is changing the way developers design, ship and maintain software - and why the human side still matters.',
     url: 'https://medium.com/@rudicarrilloypr/the-impact-of-ai-on-software-development-and-the-advent-of-futuristic-technologies-5653ee26d753',
     cover: aiCover,
     source: 'Medium',
@@ -22,7 +22,7 @@ const articles = [
     id: 'junior-devs-2025',
     title: 'What Companies Actually Expect from Junior Developers in 2025',
     excerpt:
-      'A realistic breakdown of the hidden expectations companies have for junior developers today — from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.',
+      'A realistic breakdown of the hidden expectations companies have for junior developers today - from code readability and communication to debugging, AI-assisted work, and the mindset modern teams truly value.',
     url: 'https://medium.com/@rudicarrilloypr/what-companies-really-expect-from-junior-developers-in-2025-and-why-most-applicants-miss-the-mark-e6291bb5f8af',
     cover: juniorDevsCover,
     source: 'Medium',
@@ -64,7 +64,7 @@ function Socials() {
               <div className={styles.blogText}>
                 <h3 className={styles.blogTitle}>{article.title}</h3>
                 <p className={styles.blogMeta}>
-                  Written by Rudi Carrillo · {article.source}
+                  Written by Rudi Carrillo / {article.source}
                 </p>
                 <p className={styles.blogExcerpt}>{article.excerpt}</p>
 
@@ -97,7 +97,7 @@ function Socials() {
               />
             </a>
             <div className={styles.footerText}>
-              <span>© {new Date().getFullYear()} Rudi Carrillo.</span>
+              <span>Copyright {new Date().getFullYear()} Rudi Carrillo.</span>
               <span>Available for remote opportunities.</span>
             </div>
           </div>

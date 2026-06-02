@@ -184,7 +184,7 @@
   resize: vertical;
 }
 
-/* Botón */
+/* Button */
 .submitButton {
   margin-top: 6px;
   width: 100%;
@@ -250,7 +250,7 @@
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  /* Menos aire en la sección de contacto y entre bloques */
+  /* Less spacing between contact blocks */
   .contact {
     margin-top: -50px;
   }
@@ -272,11 +272,11 @@
   }
 
   .formTerminal {
-    margin-top: 0; /* juntamos más el terminal al texto */
+    margin-top: 0;
   }
 }
 
-/* ⚪️ LIGHT MODE — Terminal Blanco, Premium, Estilo Raycast/Linear */
+/* Light mode terminal */
 :global(.theme-light) .formTerminal {
   background: linear-gradient(
     155deg,
@@ -290,7 +290,7 @@
   backdrop-filter: blur(22px);
 }
 
-/* Header del terminal: estilo “translucent macOS window” */
+/* Terminal header */
 :global(.theme-light) .terminalHeader {
   background: linear-gradient(
     90deg,
@@ -330,7 +330,7 @@
   background: #ffffffee;
 }
 
-/* “$” prompt en light mode */
+/* Prompt in light mode */
 :global(.theme-light) .prompt {
   color: #14b8a6;
 }
@@ -340,7 +340,7 @@
   color: #475569;
 }
 
-/* Botón estilo “glass-gradient light” */
+/* Light gradient button */
 :global(.theme-light) .submitButton {
   background: linear-gradient(
     90deg,
