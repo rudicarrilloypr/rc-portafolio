@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import {
   FaArrowRight,
@@ -9,7 +9,42 @@ import {
 import HeroScene from '../HeroScene/HeroScene';
 import styles from './portfolio.module.css';
 
+const telemetryCards = [
+  {
+    status: 'ONLINE',
+    label: 'Interface systems',
+    headline: 'Clean architecture, fast delivery, modern UX.',
+    bars: ['88%', '76%', '94%'],
+    trace: ['38%', '72%', '48%', '86%', '58%'],
+  },
+  {
+    status: 'MEASURING',
+    label: 'Product signal',
+    headline: 'Responsive flows, clear data, reliable interactions.',
+    bars: ['82%', '91%', '74%'],
+    trace: ['52%', '84%', '44%', '76%', '68%'],
+  },
+  {
+    status: 'SYNCED',
+    label: 'Full-stack delivery',
+    headline: 'APIs, UI systems, and product logic working together.',
+    bars: ['93%', '79%', '88%'],
+    trace: ['44%', '66%', '92%', '56%', '78%'],
+  },
+];
+
 function Portfolio() {
+  const [activeTelemetry, setActiveTelemetry] = useState(0);
+  const telemetry = telemetryCards[activeTelemetry];
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveTelemetry((current) => (current + 1) % telemetryCards.length);
+    }, 3200);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <section id="portfolio" className={styles.hero}>
       <HeroScene />
@@ -111,16 +146,42 @@ function Portfolio() {
         >
           <div className={styles.telemetryHeader}>
             <span>RC-SD/2026</span>
-            <span>ONLINE</span>
+            <span>{telemetry.status}</span>
           </div>
-          <div className={styles.telemetryBody}>
-            <p>Interface systems</p>
-            <strong>Clean architecture, fast delivery, modern UX.</strong>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={telemetry.label}
+              className={styles.telemetryBody}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.28, ease: 'easeOut' }}
+            >
+              <p>{telemetry.label}</p>
+              <strong>{telemetry.headline}</strong>
+            </motion.div>
+          </AnimatePresence>
           <div className={styles.telemetryBars}>
-            <span style={{ '--level': '88%' }} />
-            <span style={{ '--level': '76%' }} />
-            <span style={{ '--level': '94%' }} />
+            {telemetry.bars.map((level, index) => (
+              <span
+                key={`${telemetry.label}-${level}`}
+                style={{
+                  '--level': level,
+                  '--delay': `${index * 0.18}s`,
+                }}
+              />
+            ))}
+          </div>
+          <div className={styles.telemetryTrace} aria-hidden="true">
+            {telemetry.trace.map((height, index) => (
+              <span
+                key={`${telemetry.label}-${height}-${index}`}
+                style={{
+                  '--height': height,
+                  '--delay': `${index * 0.12}s`,
+                }}
+              />
+            ))}
           </div>
         </motion.aside>
       </div>

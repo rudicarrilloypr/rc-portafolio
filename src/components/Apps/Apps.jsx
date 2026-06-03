@@ -188,10 +188,21 @@ function Apps() {
   const hasOpenDetails = infoVisible.some(Boolean);
   const sliderIsPlaying = isPlaying && !hasOpenDetails;
 
+  const openInfo = (index) => {
+    const nextInfoVisible = Array(projects.length).fill(false);
+    nextInfoVisible[index] = true;
+    setInfoVisible(nextInfoVisible);
+    setIsPlaying(false);
+  };
+
   const toggleInfo = (index) => {
-    const nextInfoVisible = [...infoVisible];
-    const willShowDetails = !nextInfoVisible[index];
-    nextInfoVisible[index] = !nextInfoVisible[index];
+    const willShowDetails = !infoVisible[index];
+    const nextInfoVisible = Array(projects.length).fill(false);
+
+    if (willShowDetails) {
+      nextInfoVisible[index] = true;
+    }
+
     setInfoVisible(nextInfoVisible);
 
     if (willShowDetails) {
@@ -201,6 +212,25 @@ function Apps() {
 
   const togglePlay = () => {
     setIsPlaying((prev) => !prev);
+  };
+
+  const handleProjectCardClick = (event, index) => {
+    if (event.target.closest('a, button')) {
+      return;
+    }
+
+    openInfo(index);
+  };
+
+  const handleProjectCardKeyDown = (event, index) => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openInfo(index);
+    }
   };
 
   const settings = {
@@ -244,6 +274,10 @@ function Apps() {
               <div key={project.name} className={styles.slideOuter}>
                 <article
                   className={`${styles.slide} ${styles[project.className]}`}
+                  tabIndex={0}
+                  aria-label={`Open details for ${project.name}`}
+                  onClick={(event) => handleProjectCardClick(event, index)}
+                  onKeyDown={(event) => handleProjectCardKeyDown(event, index)}
                   onPointerMove={handleCardPointerMove}
                   onPointerLeave={handleCardPointerLeave}
                 >
