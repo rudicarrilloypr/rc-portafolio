@@ -1,0 +1,237 @@
+/* STACK / MY STACK */
+.stackSection {
+  margin-bottom: 40px;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.skillBox {
+  padding: 16px 16px 14px;
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.skillHeader h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.skillIcon {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.skillBox ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.skillBox li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.86rem;
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+.skillBox li span {
+  flex: 1;
+}
+
+.skillBox li svg {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ABOUT LAYOUT */
+.aboutLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .aboutLayout {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.profileCol {
+  flex: 0 0 auto;
+}
+
+.aboutTextCol {
+  flex: 1;
+}
+
+.profileImageWrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(248, 250, 252, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .profileImageWrapper {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+.aboutBody {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Resume button */
+.resumeButton {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.28),
+      transparent 55%
+    );
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 0.82rem;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.9);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.resumeButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 1);
+}
+
+/* CERTIFICATES */
+.certificatesSection {
+  margin-top: 16px;
+}
+
+.certHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.certificationIcon {
+  font-size: 2.2rem;
+  color: var(--accent);
+}
+
+.certTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.certGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.certGrid a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--card-strong-border);
+  background: var(--card-strong-bg);
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  box-shadow: var(--card-strong-shadow);
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease, opacity 0.18s ease;
+}
+
+.certGrid a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.certGrid a svg {
+  font-size: 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .skillsGrid {
+    gap: 12px;
+  }
+
+  .skillBox {
+    padding: 14px 12px;
+  }
+
+  .certGrid {
+    gap: 8px;
+  }
+
+  .certGrid a {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Lighter shadows in light mode */
+:global(.theme-light) .profileImageWrapper {
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.25);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+:global(.theme-light) .resumeButton {
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.21);
+  border-color: rgba(15, 23, 42, 0.16);
+}
